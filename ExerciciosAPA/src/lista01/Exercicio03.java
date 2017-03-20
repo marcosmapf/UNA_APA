@@ -1,20 +1,19 @@
-package aula2202;
+package lista01;
 
 import java.util.Random;
 
-public class Exercicio04 {
-	
+public class Exercicio03 {
+
 	/*
 	 * Escreva um algoritmo que preencha um vetor de 10 posições com números inteiros
-	 * gerados randomicamente. O algoritmo deve trocar o elemento da primeira posição do
-	 * vetor com o elemento da última posição do vetor. O algoritmo deve imprimir os
-	 * números da primeira e da última posição do vetor antes e após a troca.
+	 * gerados randomicamente. O algoritmo deve informar se o primeiro elemento do vetor é
+	 * par ou impar.
 	 */
 
 	private int[] vetorNumeros;
 
 
-	public Exercicio04(){
+	public Exercicio03(){
 
 		int[] vetorAleatorio = new int[10];
 		setVetorNumeros(randomFill(vetorAleatorio));
@@ -24,7 +23,7 @@ public class Exercicio04 {
 	/*<--------------------------------------------------------------------------------------->*/
 
 
-	public int[] randomFill(int[] vetorAleatorio){
+	private int[] randomFill(int[] vetorAleatorio){
 
 		Random rand = new Random(System.currentTimeMillis());
 
@@ -40,19 +39,16 @@ public class Exercicio04 {
 	/*<--------------------------------------------------------------------------------------->*/
 
 
-	public void flipFlop(){
+	public void parImpar(){
 
 		int[] vetor = getVetorNumeros();
-		int tamanho = vetor.length;
-		int hold = vetor[0];
+		int resto = vetor[0] % 2;
 
-		System.out.println("\nO primeiro numero do vetor e: " + vetor[0] + " e o ultimo número e: " + vetor[tamanho-1]);
-		System.out.println("Alternando o primeiro e o ultimo numeros");		
+		switch (resto){
 
-		vetor[0] = vetor[tamanho-1];
-		vetor[tamanho-1] = hold;
-
-		System.out.println("O primeiro numero do vetor e: " + vetor[0] + " e o ultimo número e: " + vetor[tamanho-1]);
+		case(0): System.out.println("O primeiro numero do vetor e " + vetor[0] + " e, portanto, e par"); break;		
+		case(1): System.out.println("O primeiro numero do vetor e " + vetor[0] + " e, portanto, e impar"); break;
+		}
 	}
 
 

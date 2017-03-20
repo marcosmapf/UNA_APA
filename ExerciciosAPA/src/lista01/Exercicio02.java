@@ -1,4 +1,4 @@
-package aula2202;
+package lista01;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
