@@ -1,10 +1,10 @@
-package lista01;
+package lista03;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import customExceptions.OutOfBoundsException;
 
-public class Main {
+public class MainClass {
 
 	static Scanner entrada = new Scanner(System.in);
 

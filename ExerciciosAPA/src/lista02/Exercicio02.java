@@ -21,9 +21,12 @@ public class Exercicio02 {
 		int[] vetor = new int[tamanho];
 
 		preencherVetor(vetor);
-
-
 	}
+	
+	
+	/*<--------------------------------------------------------------------------------------->*/
+	
+	
 
 	private void preencherVetor(int[] vetor){
 
@@ -39,6 +42,10 @@ public class Exercicio02 {
 		printResultados(contador);
 	}
 
+	
+	/*<--------------------------------------------------------------------------------------->*/
+	
+	
 	private void printResultados(int contador){
 
 		System.out.println("\nTamanho do vetor:  " + tamanhoVetor);

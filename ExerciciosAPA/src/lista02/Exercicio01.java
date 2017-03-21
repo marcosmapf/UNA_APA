@@ -21,10 +21,12 @@ public class Exercicio01 {
 		int[] vetor = new int[tamanho];
 
 		preencherVetor(vetor);
-
-
 	}
 
+	
+	/*<--------------------------------------------------------------------------------------->*/
+	
+	
 	private void preencherVetor(int[] vetor){
 
 		Random aleatorio = new Random(System.currentTimeMillis());
@@ -39,6 +41,10 @@ public class Exercicio01 {
 		printResultados(contador);
 	}
 
+	
+	/*<--------------------------------------------------------------------------------------->*/
+	
+	
 	private void printResultados(int contador){
 
 		System.out.println("\nTamanho do vetor:  " + tamanhoVetor);

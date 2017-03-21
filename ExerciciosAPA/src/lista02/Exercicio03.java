@@ -22,7 +22,11 @@ public class Exercicio03 {
 
 		preencherMatriz(matriz);
 	}
-
+	
+	
+	/*<--------------------------------------------------------------------------------------->*/
+	
+	
 	private void preencherMatriz(int[][] matriz){
 
 		Random aleatorio = new Random(System.currentTimeMillis());
@@ -38,11 +42,14 @@ public class Exercicio03 {
 
 		printResultados(contador);
 	}
-
+	
+	
+	/*<--------------------------------------------------------------------------------------->*/
+	
+	
 	private void printResultados(int contador){
 
 		System.out.println("\nTamanho da matriz: " + tamanhoMatriz);
 		System.out.println("Valor do contador: " + contador + "\n");
 	}
 }
-
