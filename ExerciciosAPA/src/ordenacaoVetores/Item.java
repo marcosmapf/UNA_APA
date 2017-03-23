@@ -2,11 +2,15 @@ package ordenacaoVetores;
 
 public class Item {
 
-	private int chave;
+	private int identificador;
+	
 
-	public Item(int inteiro){
+	/*<--------------------------------------------------------------------------------------->*/
+	
+	
+	public Item(int identificador){
 
-		this.chave = inteiro;
+		this.identificador = identificador;
 	}
 
 	
@@ -15,6 +19,6 @@ public class Item {
 	
 	public int getChave(){
 
-		return this.chave;
+		return this.identificador;
 	}
 }

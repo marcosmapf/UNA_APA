@@ -16,7 +16,7 @@ public class Exercicio11 {
 	 * parâmetro e:
 	 * i. Retornar a distância entre as cidades, se houver uma estrada entre elas.
 	 * ii. Retornar zero, se não houver uma estrada ligando as duas cidades.
-*/
+	 * */
 
 	Scanner entrada = new Scanner(System.in);
 

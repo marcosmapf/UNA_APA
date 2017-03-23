@@ -10,7 +10,7 @@ public class MainClass {
 
 	public static void main(String[] args) {
 
-		System.out.println("Informe qual exercicio você deseja rodar:\n"
+		System.out.println("Informe qual exercicio você deseja rod0ar:\n"
 				+ "1  -> Calculo de somatórios\n"
 				+ "2  -> Calculo de produtórios\n"
 				+ "3  -> Vetor de numeros aleatorios\n"
