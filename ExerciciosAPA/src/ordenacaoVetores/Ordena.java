@@ -4,62 +4,42 @@ import java.security.SecureRandom;
 
 public abstract class Ordena {
 
-	private Item[] vetor;
+	protected Item[] vetorItems;
 	int tamanhoVetor = 0;
 
-	
+
 	/*<--------------------------------------------------------------------------------------->*/
-	
-	
+
+
 	public void printVetor(){
 
-		for (int i = 0; i < this.tamanhoVetor; i ++){
+		for (int i = 0; i < this.tamanhoVetor - 1; i ++){
 
-			System.out.print(this.vetor[i] + ", ");
+			System.out.print(vetorItems[i].getChave() + ", ");
 		}
+
+		System.out.println(vetorItems[tamanhoVetor -1].getChave());
 	}
 
-	
-	/*<--------------------------------------------------------------------------------------->*/
-	
-	
-	private int[] preencherAleatorio(int[] vetor){
 
+	/*<--------------------------------------------------------------------------------------->*/
+
+
+	protected Item[] preencherAleatorio(int tamanho){
+
+		Item[] vetor = new Item[tamanho];		
 		SecureRandom aleatorio = new SecureRandom();
 
 		for (int i = 0; i < this.tamanhoVetor; i++){
 
 			Item numero = new Item(aleatorio.nextInt(1000));
-			vetor[i] = numero.getChave();
+			vetor[i] = numero;
 		}
 
 		return vetor;
 	}
-	
+
 
 	/*<--------------------------------------------------------------------------------------->*/
-	
-	
-	public Item[] getVetor() {
-		return vetor;
-	}
 
-	public void setVetor(Item[] vetor) {
-		this.vetor = vetor;
-	}
-
-	
-	/*<--------------------------------------------------------------------------------------->*/
-	
-	
-	public int getTamanhoVetor() {
-		return tamanhoVetor;
-	}
-
-	public void setTamanhoVetor(int tamanhoVetor) {
-		this.tamanhoVetor = tamanhoVetor;
-	}
-
-	
-	/*<--------------------------------------------------------------------------------------->*/
 }
