@@ -6,7 +6,12 @@ public abstract class Ordena {
 
 	protected Item[] vetorItems;
 	int tamanhoVetor = 0;
+	
+	public int comparacoes = 0;
+	public int trocas = 0;
 
+	//public int comparacoes = 0;
+	//public int trocas = 0;
 
 	/*<--------------------------------------------------------------------------------------->*/
 

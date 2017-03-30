@@ -1,7 +1,5 @@
 package ordenacaoVetores;
 
-import java.security.SecureRandom;
-
 public class OrdenacaoBolha extends Ordena {
 
 	/*Escreva um pacote em linguagem Java para ordenação de vetores. O pacote deve conter o
@@ -10,9 +8,8 @@ public class OrdenacaoBolha extends Ordena {
 	 */
 
 
-
 	/*<--------------------------------------------------------------------------------------->*/
-
+	
 
 	public OrdenacaoBolha(){
 
@@ -32,15 +29,21 @@ public class OrdenacaoBolha extends Ordena {
 	public void ordenarBolha(){
 
 		int auxiliar = 0;
+		
+		comparacoes = 0; 
+		trocas = 0;
 
 		for (int i = 0; i < tamanhoVetor - 1; i++){
 			for (int j = 1; j < tamanhoVetor - i; j ++){
 
+				comparacoes += 1;
+				
 				if (vetorItems[j].getChave() < vetorItems[j-1].getChave()){
 
 					auxiliar = vetorItems[j-1].getChave();
 					vetorItems[j-1].setChave(vetorItems[j].getChave());
 					vetorItems[j].setChave(auxiliar);
+					trocas++;
 				}
 			}
 		}
@@ -52,19 +55,22 @@ public class OrdenacaoBolha extends Ordena {
 
 	public void ordenarBolha(Item[] vetor){
 
-		this.vetorItems = vetor;
-		this.tamanhoVetor = vetor.length;
-
 		int auxiliar = 0;
+		
+		comparacoes = 0; 
+		trocas = 0;
 
 		for (int i = 0; i < tamanhoVetor - 1; i++){
 			for (int j = 1; j < tamanhoVetor - i; j ++){
+
+				comparacoes++;
 
 				if (vetor[j].getChave() < vetor[j-1].getChave()){
 
 					auxiliar = vetor[j-1].getChave();
 					vetor[j-1].setChave(vetor[j].getChave());
 					vetor[j].setChave(auxiliar);
+					trocas++;
 				}
 			}
 		}

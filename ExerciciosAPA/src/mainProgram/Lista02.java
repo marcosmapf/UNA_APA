@@ -51,6 +51,8 @@ public class Lista02 {
 			bolha.ordenarBolha(); 
 			System.out.print("Vetor ordenado: ");
 			bolha.printVetor(); 
+			
+			System.out.printf("\nNumero de comparacoes: %d\nNumero de trocas: %d", bolha.comparacoes, bolha.trocas);
 			System.out.println("\nDuracao da ordenacao: " + (System.currentTimeMillis() - tempoInicial) + " ms.");
 			break;
 		}
