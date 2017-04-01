@@ -2,11 +2,11 @@ package mainProgram;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import customExceptions.OutOfBoundsException;
 
-import lista02Exercicio01.Exercicio01;
-import lista02Exercicio02.Exercicio02;
-import lista02Exercicio03.Exercicio03;
+import custom.Exceptions.OutOfBoundsException;
+import lista02.Exercicio01.Exercicio01;
+import lista02.Exercicio02.Exercicio02;
+import lista02.Exercicio03.Exercicio03;
 import ordenacaoVetores.OrdenacaoBolha;
 
 public class Lista02 {

@@ -2,19 +2,19 @@ package mainProgram;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import customExceptions.OutOfBoundsException;
 
-import lista01Exercicio01.Somatorios;
-import lista01Exercicio02.Produtorios;
-import lista01Exercicio03.VetorParImpar;
-import lista01Exercicio04.alternandoNumeros;
-import lista01Exercicio05.QuantParImpar;
-import lista01Exercicio06.MatrizDiags;
-import lista01Exercicio07.MatrizTransposta;
-import lista01Exercicio08.SomaAbaixoDiag;
-import lista01Exercicio09.MultiplicacaoMatriz;
-import lista01Exercicio10.Cinema;
-import lista01Exercicio11.Cidades;
+import custom.Exceptions.OutOfBoundsException;
+import lista01.Exercicio01.Somatorios;
+import lista01.Exercicio02.Produtorios;
+import lista01.Exercicio03.VetorParImpar;
+import lista01.Exercicio04.alternandoNumeros;
+import lista01.Exercicio05.QuantParImpar;
+import lista01.Exercicio06.MatrizDiags;
+import lista01.Exercicio07.MatrizTransposta;
+import lista01.Exercicio08.SomaAbaixoDiag;
+import lista01.Exercicio09.MultiplicacaoMatriz;
+import lista01.Exercicio10.Cinema;
+import lista01.Exercicio11.Cidades;
 
 public class Lista01 {
 
@@ -75,7 +75,7 @@ public class Lista01 {
 			break;
 
 
-		case 3: VetorParImpar parImpar = new VetorParImpar(10); parImpar.printVetor(); parImpar.parImpar(); break;
+		case 3: VetorParImpar parImpar = new VetorParImpar(10); parImpar.getVetorInt().preencherAleatorio(); parImpar.parImpar(); break;
 
 		case 4: alternandoNumeros alternando = new alternandoNumeros(10); alternando.printVetor(); alternando.flipFlop(); alternando.printVetor(); break;
 

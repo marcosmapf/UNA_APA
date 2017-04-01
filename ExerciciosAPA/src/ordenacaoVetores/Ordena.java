@@ -2,6 +2,8 @@ package ordenacaoVetores;
 
 import java.security.SecureRandom;
 
+import custom.Objects.Item;
+
 public abstract class Ordena {
 
 	protected Item[] vetorItems;

@@ -1,5 +1,7 @@
 package ordenacaoVetores;
 
+import custom.Objects.Item;
+
 public class OrdenacaoBolha extends Ordena {
 
 	/*Escreva um pacote em linguagem Java para ordenação de vetores. O pacote deve conter o

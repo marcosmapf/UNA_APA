@@ -1,0 +1,57 @@
+package lista01.Exercicio05;
+
+import java.util.Random;
+
+import custom.Objects.VetorInt;
+
+public class QuantParImpar {
+
+	/*
+	 *  Escreva um algoritmo que preencha um vetor de 10 posições com números inteiros
+	 * gerados randomicamente. O algoritmo deve apresentar a quantidade de números pares 
+	 * e a quantidade de números ímpares armazenados no vetor.
+	 */
+
+	private VetorInt vetorNumeros;
+	int tamanhoVetor;
+
+
+	public QuantParImpar(int tamanho){
+
+		vetorNumeros = new VetorInt(tamanho);
+		tamanhoVetor = tamanho;
+		vetorNumeros.preencherAleatorio();
+
+	}
+
+
+	public QuantParImpar(int[] vetor){
+
+		vetorNumeros = new VetorInt(vetor);
+		tamanhoVetor = vetor.length;
+		vetorNumeros.preencherAleatorio();
+	}
+
+	/*<--------------------------------------------------------------------------------------->*/
+
+
+	public void countParImpar(){
+
+		int par = 0, impar = 0;
+
+		for (int i = 0; i < tamanhoVetor; i++){
+
+			if (vetorNumeros.getValor(i) % 2 == 0){
+				par ++;
+			}
+			else impar ++;
+		}
+
+		System.out.println("\nO vetor possui " + par + " numeros pares e " + impar + " numeros impares.");
+	}
+
+
+	/*<--------------------------------------------------------------------------------------->*/
+
+
+}
