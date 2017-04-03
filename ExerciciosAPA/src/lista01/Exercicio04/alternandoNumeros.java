@@ -38,8 +38,16 @@ public class alternandoNumeros {
 
 		System.out.println("\nAlternando o primeiro e o ultimo numeros");		
 
-		vetorNumeros.setValor(0, tamanhoVetor - 1);
+		vetorNumeros.setValor(0, vetorNumeros.getValor(tamanhoVetor - 1));
 		vetorNumeros.setValor(tamanhoVetor - 1, auxiliar);
+	}
+
+
+	/*<--------------------------------------------------------------------------------------->*/
+
+
+	public VetorInt getVetorInt() {
+		return vetorNumeros;
 	}
 
 

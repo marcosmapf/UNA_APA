@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import custom.Exceptions.OutOfBoundsException;
+import custom.Objects.MatrizInt;
 
 public class Cinema {
 
@@ -14,33 +15,24 @@ public class Cinema {
 	 * c) Possuir um método que imprima a matriz. 
 	 * d) Possuir um método que receba o valor do ingresso como parâmetro e retorne o total apurado numa seção.
 	 */
-	
+
 	private Scanner entrada = new Scanner(System.in);
-	int[][] secaoCinema;
+	MatrizInt secaoCinema;
 	int tamanhoSala;
 
 
-	public Cinema(){
+	public Cinema(int tamanho){
 
-		int[][] matriz = new int[10][10];
-		secaoCinema = preencherMatriz(matriz);
-		tamanhoSala = matriz.length;
+		secaoCinema = new MatrizInt(tamanho);
+		tamanhoSala = tamanho;
 	}
 
-	/*<--------------------------------------------------------------------------------------->*/
 
+	public Cinema(int[][] matriz){
 
-	private int[][] preencherMatriz(int[][] matriz){
-
-		for (int i = 0; i < matriz.length; i++){
-			for (int j = 0; j < matriz[0].length; j++){
-
-				matriz[i][j] = 0;
-			}
-		}
-		return matriz;
+		secaoCinema = new MatrizInt(matriz);
+		tamanhoSala = matriz.length;;
 	}
-
 
 	/*<--------------------------------------------------------------------------------------->*/
 
@@ -66,13 +58,13 @@ public class Cinema {
 			System.out.print("\nInsira o assento (de 1 a " + tamanhoSala + ")");
 			assento = requererAssento(tamanhoSala) -1;
 
-			if (secaoCinema[fileira][assento] == 1){
+			if (secaoCinema.getValor(fileira, assento) == 1){
 
 				System.out.println("Este assento esta ocupado. Por favor, escolha novamente.\n");
 			}
 			else {
-				secaoCinema[fileira][assento] = 1;
-				System.out.print("\nSeu assento foi reservado na fileira " + (fileira+1) + ", assento " + (assento+1));
+				secaoCinema.setValor(fileira, assento, 1);
+				System.out.print("\nSeu assento foi reservado na fileira " + (fileira +1) + ", assento " + (assento+ 1));
 
 				repeat = requererNovaCompra();
 			}
@@ -120,10 +112,10 @@ public class Cinema {
 
 		for (int i = 0; i < tamanhoSala; i++){
 
-			if (secaoCinema[fileira][i] == 0){
+			if (secaoCinema.getValor(fileira, i) == 0){
 
 				assentosLivres += 1;
-				System.out.print(i+1 + ", ");
+				System.out.print(i + 1 + ", ");
 			}
 		}
 
@@ -140,24 +132,6 @@ public class Cinema {
 	/*<--------------------------------------------------------------------------------------->*/
 
 
-	public void printMatrix(){
-
-		System.out.println("\n**Sala de cinema**\n\n");
-
-		for (int i = 0; i < tamanhoSala; i++){
-			for (int j = 0; j < tamanhoSala; j++){
-
-				System.out.print(this.secaoCinema[i][j] + " ");
-			}
-
-			System.out.println();
-		}
-	}
-
-
-	/*<--------------------------------------------------------------------------------------->*/
-
-
 	public void totalTicket(){
 
 		double ticket = valorTicket();
@@ -166,7 +140,7 @@ public class Cinema {
 		for (int i = 0; i < tamanhoSala; i++){
 			for (int j = 0; j < tamanhoSala; j++){
 
-				if (secaoCinema[i][j] == 1){
+				if (secaoCinema.getValor(i, j) == 1){
 					total += ticket;
 				}
 			}
@@ -175,10 +149,10 @@ public class Cinema {
 		System.out.println("O ticket total da secao foi: " + total);
 	}
 
-	
+
 	/*<--------------------------------------------------------------------------------------->*/
-	
-	
+
+
 	private double valorTicket(){
 
 		boolean repeat = true;
@@ -235,6 +209,10 @@ public class Cinema {
 		}
 	}
 
+
+	public MatrizInt getSecao() {
+		return secaoCinema;
+	}
 
 	/*<--------------------------------------------------------------------------------------->*/
 

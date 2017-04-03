@@ -32,7 +32,7 @@ public class MatrizInt {
 				System.out.print(matrizInteiros[i][j]+ ", ");
 			}
 
-			System.out.println(matrizInteiros[i][tamanhoMatriz]);
+			System.out.println(matrizInteiros[i][tamanhoMatriz - 1]);
 		}
 	}
 
@@ -47,7 +47,7 @@ public class MatrizInt {
 				System.out.print(matriz[i][j]+ ", ");
 			}
 
-			System.out.println(matriz[i][tamanho]);
+			System.out.println(matriz[i][tamanho - 1]);
 		}
 	}
 

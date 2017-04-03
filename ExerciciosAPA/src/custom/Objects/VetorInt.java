@@ -32,7 +32,7 @@ public class VetorInt {
 			System.out.print(vetorInteiros[i]+ ", ");
 		}
 
-		System.out.println(vetorInteiros[tamanhoVetor]);
+		System.out.println(vetorInteiros[tamanhoVetor -1]);
 	}
 
 

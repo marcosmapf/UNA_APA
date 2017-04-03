@@ -1,6 +1,7 @@
 package ordenacaoVetores;
 
 import custom.Objects.Item;
+import custom.Objects.VetorItems;
 
 public class OrdenacaoBolha extends Ordena {
 
@@ -11,27 +12,30 @@ public class OrdenacaoBolha extends Ordena {
 
 
 	/*<--------------------------------------------------------------------------------------->*/
-	
-
-	public OrdenacaoBolha(){
-
-	}
 
 
 	public OrdenacaoBolha(int tamanho){
 
+		vetorOrdena = new VetorItems(tamanho);
 		tamanhoVetor = tamanho;
-		vetorItems = preencherAleatorio(tamanho);
+		vetorOrdena.preencherAleatorio();
+	}
+
+
+	public OrdenacaoBolha(int[] vetor){
+
+		vetorOrdena = new VetorItems(vetor);
+		tamanhoVetor = vetor.length;
 	}
 
 
 	/*<--------------------------------------------------------------------------------------->*/
 
-
+	/*
 	public void ordenarBolha(){
 
 		int auxiliar = 0;
-		
+
 		comparacoes = 0; 
 		trocas = 0;
 
@@ -39,7 +43,7 @@ public class OrdenacaoBolha extends Ordena {
 			for (int j = 1; j < tamanhoVetor - i; j ++){
 
 				comparacoes += 1;
-				
+
 				if (vetorItems[j].getChave() < vetorItems[j-1].getChave()){
 
 					auxiliar = vetorItems[j-1].getChave();
@@ -50,7 +54,30 @@ public class OrdenacaoBolha extends Ordena {
 			}
 		}
 	}
+	 */
 
+	public void ordenarBolha(){
+
+		int auxiliar = 0;
+
+		comparacoes = 0; 
+		trocas = 0;
+
+		for (int i = 0; i < tamanhoVetor - 1; i++){
+			for (int j = 0; j < tamanhoVetor - 1 - i; j ++){
+
+				comparacoes++;
+
+				if (vetorOrdena.getChave(j) > vetorOrdena.getChave(j+1)){
+
+					auxiliar = vetorOrdena.getChave(j+1);
+					vetorOrdena.setChave(j+1, vetorOrdena.getChave(j));
+					vetorOrdena.setChave(j, auxiliar);
+					trocas++;
+				}
+			}
+		}
+	}
 
 	/*<--------------------------------------------------------------------------------------->*/
 
@@ -58,7 +85,7 @@ public class OrdenacaoBolha extends Ordena {
 	public void ordenarBolha(Item[] vetor){
 
 		int auxiliar = 0;
-		
+
 		comparacoes = 0; 
 		trocas = 0;
 

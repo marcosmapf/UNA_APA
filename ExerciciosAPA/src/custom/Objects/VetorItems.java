@@ -11,7 +11,17 @@ public class VetorItems {
 
 		this.vetorItems = new Item[tamanho];
 		tamanhoVetor = tamanho;
-		zerarVetor(vetorItems);		
+	}
+
+
+	public VetorItems(int[] vetor){
+
+		tamanhoVetor = vetor.length;
+
+		for (int i = 0; i < tamanhoVetor; i++){
+
+			setChave(i, vetor[i]);
+		}
 	}
 
 
@@ -98,8 +108,13 @@ public class VetorItems {
 	/*<--------------------------------------------------------------------------------------->*/
 
 
-	public void adicionarValor(int i, int valor){
+	public void setChave(int i, int valor){
 
 		this.vetorItems[i].setChave(valor);
+	}
+
+	public int getChave(int i){
+
+		return this.vetorItems[i].getChave();
 	}
 }

@@ -41,17 +41,17 @@ public class Lista02 {
 		case 3: Exercicio03 exercicio03 = new Exercicio03(10000); exercicio03.printResultado(); break;
 
 		case 4: 
-			
+
 			double tempoInicial = System.currentTimeMillis();			
 			OrdenacaoBolha bolha = new OrdenacaoBolha(10); 
-			
+
 			System.out.print("\nVetor aleatorio: ");
-			bolha.printVetor(); 
-					
+			bolha.getVetor().printVetor();  
+
 			bolha.ordenarBolha(); 
 			System.out.print("Vetor ordenado: ");
-			bolha.printVetor(); 
-			
+			bolha.getVetor().printVetor(); 
+
 			System.out.printf("\nNumero de comparacoes: %d\nNumero de trocas: %d", bolha.comparacoes, bolha.trocas);
 			System.out.println("\nDuracao da ordenacao: " + (System.currentTimeMillis() - tempoInicial) + " ms.");
 			break;

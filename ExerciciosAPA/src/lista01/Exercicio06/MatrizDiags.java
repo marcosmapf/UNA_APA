@@ -66,6 +66,7 @@ public class MatrizDiags {
 	}	
 
 
+
 	public static void diagSec(int[][] matriz){
 
 		int tamanho = matriz.length;
@@ -77,7 +78,17 @@ public class MatrizDiags {
 		}
 
 		System.out.print(matriz[tamanho - 1][0] + ".");
-	}	
+	}
+
+
+	/*<--------------------------------------------------------------------------------------->*/
+
+
+	public MatrizInt getMatrizInt() {
+		return matrizNumeros;
+
+	}
+
 
 	/*<--------------------------------------------------------------------------------------->*/
 

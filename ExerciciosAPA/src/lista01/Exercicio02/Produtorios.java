@@ -1,5 +1,6 @@
 package lista01.Exercicio02;
 
+import java.math.BigDecimal;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -32,7 +33,7 @@ public class Produtorios {
 		for (int i = 1; i <= this.limite; i++){
 
 			produto *= i;
-			System.out.println("Etapa: " + (i-1) + " Produto: " + produto + "\n");
+			System.out.print("\nEtapa: " + (i-1) + " Produto: " + produto);
 		}
 	}
 
@@ -42,34 +43,33 @@ public class Produtorios {
 
 	public void produtorioB(){
 
-		int produto = 1;
+		double produto = 1;
 
 		for (int i = 0; i <= this.limite; i++){
 
 			produto *= i + 12;
-			System.out.println("Etapa: " + (i) + " Produto: " + produto + "\n");
+			System.out.print("\nEtapa: " + (i) + " Produto: " + produto);
 		}
 	}
 
 
 	/*<--------------------------------------------------------------------------------------->*/
-
 
 	public void produtorioC(){
 
-		int produto = 1;
+		double produto = 1;
 
 		for (int i = 3; i <= this.limite; i++){
 
-			produto *= ((i/3)^4 / (i-2));
-			System.out.println("Etapa: " + (i-3) + " Produto: " + produto + "\n");
+			produto *= Math.pow(i/3, 4) / (i-2);
+			System.out.print("\nEtapa: " + (i-3) + " Produto: " + produto);
 		}
+
 	}
 
-	
 	/*<--------------------------------------------------------------------------------------->*/
-	
-	
+
+
 	public int leituraLimite(){
 
 		int limite = 0;

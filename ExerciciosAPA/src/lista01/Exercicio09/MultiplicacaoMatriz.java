@@ -3,6 +3,8 @@ package lista01.Exercicio09;
 import java.security.SecureRandom;
 import java.util.Random;
 
+import custom.Objects.MatrizInt;
+
 public class MultiplicacaoMatriz {
 
 	/*
@@ -11,53 +13,33 @@ public class MultiplicacaoMatriz {
 	 * matriz pela segunda.
 	 */
 
-	private int[][] primeiraMatriz, segundaMatriz;	
+	private MatrizInt primeiraMatriz, segundaMatriz;
 	private int tamanhoPrimeira, tamanhoSegunda;
 
 	public MultiplicacaoMatriz(int tamanho){
 
-		primeiraMatriz = preencherAleatorio(tamanho);
-		segundaMatriz = preencherAleatorio(tamanho);		
-		tamanhoPrimeira = tamanho; 
+		primeiraMatriz = new MatrizInt(tamanho);
+		tamanhoPrimeira = tamanho;
+		primeiraMatriz.preencherAleatorio();
+
+		segundaMatriz = new MatrizInt(tamanho);
 		tamanhoSegunda = tamanho;
-		
+		segundaMatriz.preencherAleatorio();		
+
+		/*
 		System.out.println("\nA primeira matriz gerada é:\n");
 		printMatriz(primeiraMatriz);
 		System.out.println("\nA segunda matriz gerada é:\n");
 		printMatriz(segundaMatriz);
+		 */
 	}
 
 	public MultiplicacaoMatriz(int[][] matriz1, int[][] matriz2){
 
-		primeiraMatriz = matriz1;
-		segundaMatriz = matriz2;		
+		primeiraMatriz = new MatrizInt(matriz1);
 		tamanhoPrimeira = matriz1.length;
-		tamanhoSegunda = matriz2.length; 
-		
-		System.out.println("\nA primeira matriz inserida é:\n");
-		printMatriz(primeiraMatriz);
-		System.out.println("\nA segunda matriz inserida é:\n");
-		printMatriz(segundaMatriz);
-	}
-
-
-	/*<--------------------------------------------------------------------------------------->*/
-
-
-	public static int[][] preencherAleatorio(int tamanho){
-
-		int[][] matrizAleatoria = new int[tamanho][tamanho];
-		SecureRandom aleatorio = new SecureRandom();
-
-		for (int i = 0; i < tamanho; i++){
-
-			for (int j = 0; j < tamanho; j ++){
-
-				matrizAleatoria[i][j] = aleatorio.nextInt(200);
-			}
-		}
-
-		return matrizAleatoria;
+		segundaMatriz = new MatrizInt(matriz2);
+		tamanhoSegunda = matriz2.length; 		
 	}
 
 
@@ -72,29 +54,25 @@ public class MultiplicacaoMatriz {
 			for (int i = 0; i < tamanhoPrimeira; i ++){
 				for (int j = 0; j < tamanhoSegunda; j++){
 
-					matrizResultado[i][k] += primeiraMatriz[i][j] * segundaMatriz[j][k];
+					matrizResultado[i][k] += primeiraMatriz.getValor(i, j) * segundaMatriz.getValor(j, k);
 				}
 			}
 		}
 
 		System.out.println("\nA matriz produto gerada é:\n");
-		printMatriz(matrizResultado);
+		MatrizInt.printMatriz(matrizResultado);
 	}
 
 
 	/*<--------------------------------------------------------------------------------------->*/
 
 
-	private void printMatriz(int[][] matriz){
+	public MatrizInt getPrimeiraMatrizInt() {
+		return primeiraMatriz;
+	}
 
-		for (int i = 0; i < matriz.length; i++){
-			for (int j = 0; j < matriz.length; j++){
-
-				System.out.print(matriz[i][j] + " ");
-			}
-
-			System.out.println();
-		}
+	public MatrizInt getSegundaMatrizInt() {
+		return segundaMatriz;
 	}
 
 

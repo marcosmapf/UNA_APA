@@ -50,6 +50,14 @@ public class QuantParImpar {
 		System.out.println("\nO vetor possui " + par + " numeros pares e " + impar + " numeros impares.");
 	}
 
+	
+	/*<--------------------------------------------------------------------------------------->*/
+	
+	
+	public VetorInt getVetorInt() {
+		return vetorNumeros;
+	}
+
 
 	/*<--------------------------------------------------------------------------------------->*/
 
