@@ -11,6 +11,7 @@ public class VetorItems {
 
 		this.vetorItems = new Item[tamanho];
 		tamanhoVetor = tamanho;
+		zerarVetor(vetorItems);
 	}
 
 
@@ -35,7 +36,7 @@ public class VetorItems {
 			System.out.print(vetorItems[i].getChave() + ", ");
 		}
 
-		System.out.println(vetorItems[tamanhoVetor].getChave());
+		System.out.println(vetorItems[tamanhoVetor -1].getChave());
 	}
 
 
@@ -98,7 +99,7 @@ public class VetorItems {
 
 		for (int i = 0; i < tamanho; i++){
 
-			vetor[i].setChave(0);
+			vetor[i] = new Item(0);
 		}
 
 		return vetor;
