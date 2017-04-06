@@ -18,7 +18,7 @@ public class VetorInt {
 
 		this.vetorInteiros = vetor;
 		tamanhoVetor = vetor.length;
-		zerarVetor(vetorInteiros);		
+		zerarVetor(vetorInteiros);			
 	}
 
 

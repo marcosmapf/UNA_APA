@@ -1,7 +1,5 @@
 package lista01.Exercicio08;
 
-import java.util.Random;
-
 import custom.Objects.MatrizInt;
 
 public class SomaAbaixoDiag {

@@ -1,8 +1,5 @@
 package lista01.Exercicio09;
 
-import java.security.SecureRandom;
-import java.util.Random;
-
 import custom.Objects.MatrizInt;
 
 public class MultiplicacaoMatriz {

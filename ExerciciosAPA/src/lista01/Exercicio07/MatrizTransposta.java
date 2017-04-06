@@ -1,9 +1,6 @@
 package lista01.Exercicio07;
 
-import java.util.Random;
-
 import custom.Objects.MatrizInt;
-import custom.Objects.MatrizItems;
 
 public class MatrizTransposta {
 

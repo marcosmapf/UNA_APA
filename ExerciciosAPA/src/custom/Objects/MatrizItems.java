@@ -14,6 +14,18 @@ public class MatrizItems {
 		zerarMatriz(matrizItems);
 	}
 
+	public MatrizItems(int[][] vetor){
+
+		tamanhoMatriz = vetor.length;
+
+		for (int i = 0; i < tamanhoMatriz; i++){
+			for (int j = 0; j < tamanhoMatriz; j++){
+
+				matrizItems[i][j] = new Item(vetor[i][j]);
+			}
+		}
+	}
+
 
 	/*<--------------------------------------------------------------------------------------->*/
 
@@ -72,14 +84,14 @@ public class MatrizItems {
 				matriz[i][j].setChave(aleatorio.nextInt(1000));
 			}
 		}
-		
+
 		return matriz;
 	}
-	
-	
+
+
 	/*<--------------------------------------------------------------------------------------->*/
-	
-	
+
+
 	public void zerarMatriz(){
 
 		for (int i = 0; i < tamanhoMatriz; i++){
@@ -100,16 +112,21 @@ public class MatrizItems {
 				matriz[i][j].setChave(0);
 			}
 		}
-		
+
 		return matriz;
 	}
-	
-	
+
+
 	/*<--------------------------------------------------------------------------------------->*/
-	
-	
-	public void adicionarValor(int i, int j, int valor){
-		
+
+
+	public void setChave(int i, int j, int valor){
+
 		this.matrizItems[i][j].setChave(valor);
+	}
+
+	public int getChave(int i, int j){
+
+		return this.matrizItems[i][j].getChave();
 	}
 }
