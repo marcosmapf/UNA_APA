@@ -42,7 +42,11 @@ public class Lista02 {
 
 		case 4: 
 
-			double tempoInicial = System.currentTimeMillis();			
+			double tempoInicial = System.currentTimeMillis();
+			//int[] vetor = {1,2,3,4,5,6,7,8,9,10};
+			//int[] vetor = {10,9,8,7,6,5,4,3,2,1};
+			//OrdenacaoBolha bolha = new OrdenacaoBolha(vetor);
+
 			OrdenacaoBolha bolha = new OrdenacaoBolha(10); 
 
 			System.out.print("\nVetor aleatorio: ");

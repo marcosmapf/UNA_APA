@@ -18,6 +18,7 @@ public class VetorItems {
 	public VetorItems(int[] vetor){
 
 		tamanhoVetor = vetor.length;
+		vetorItems = new Item[tamanhoVetor];
 
 		for (int i = 0; i < tamanhoVetor; i++){
 

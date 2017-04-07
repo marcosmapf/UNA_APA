@@ -17,6 +17,7 @@ public class MatrizItems {
 	public MatrizItems(int[][] vetor){
 
 		tamanhoMatriz = vetor.length;
+		matrizItems = new Item[tamanhoMatriz][tamanhoMatriz];
 
 		for (int i = 0; i < tamanhoMatriz; i++){
 			for (int j = 0; j < tamanhoMatriz; j++){
