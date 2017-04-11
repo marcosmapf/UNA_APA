@@ -56,50 +56,55 @@ public class OrdenacaoBolha extends Ordena {
 	}
 	 */
 
-	public void ordenarBolha(){
+	public void ordenar(){
 
-		int auxiliar = 0;
+		Item auxiliar;
 
 		comparacoes = 0; 
 		trocas = 0;
 
 		for (int i = 0; i < tamanhoVetor - 1; i++){
-			for (int j = 0; j < tamanhoVetor - 1 - i; j ++){
+			for (int j = 0; j < tamanhoVetor - 1 - i; j++){
 
 				comparacoes++;
 
-				if (vetorOrdena.getChave(j) > vetorOrdena.getChave(j+1)){
+				if (vetorOrdena.getChaveOfItem(j) > vetorOrdena.getChaveOfItem(j+1)){
 
-					auxiliar = vetorOrdena.getChave(j+1);
-					vetorOrdena.setChave(j+1, vetorOrdena.getChave(j));
-					vetorOrdena.setChave(j, auxiliar);
 					trocas++;
+					auxiliar = vetorOrdena.getItem(j+1);	
+
+					vetorOrdena.setItem(j+1, vetorOrdena.getItem(j));
+					vetorOrdena.setItem(j, auxiliar);	
 				}
 			}
 		}
 	}
+	
 
 	/*<--------------------------------------------------------------------------------------->*/
 
 
-	public void ordenarBolha(Item[] vetor){
+	public void ordenar(Item[] vetor){
 
-		int auxiliar = 0;
+		Item auxiliar;
+		int tamanho = vetor.length;
 
 		comparacoes = 0; 
 		trocas = 0;
 
-		for (int i = 0; i < tamanhoVetor - 1; i++){
-			for (int j = 1; j < tamanhoVetor - i; j ++){
+		for (int i = 0; i < tamanho - 1; i++){
+			for (int j = 0; j < tamanho - 1 - i; j++){
 
 				comparacoes++;
 
-				if (vetor[j].getChave() < vetor[j-1].getChave()){
+				if (vetor[j].getChave() > vetor[j+1].getChave()){
 
-					auxiliar = vetor[j-1].getChave();
-					vetor[j-1].setChave(vetor[j].getChave());
-					vetor[j].setChave(auxiliar);
 					trocas++;
+					auxiliar = vetor[j+1];
+					
+					vetor[j+1] = vetor[j];
+					vetor[j] = auxiliar;
+					
 				}
 			}
 		}

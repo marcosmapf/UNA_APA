@@ -121,13 +121,23 @@ public class MatrizItems {
 	/*<--------------------------------------------------------------------------------------->*/
 
 
-	public void setChave(int i, int j, int valor){
+	public void setChaveOfItem(int i, int j, int valor){
 
 		this.matrizItems[i][j].setChave(valor);
 	}
 
-	public int getChave(int i, int j){
+	public int getChaveOfItem(int i, int j){
 
 		return this.matrizItems[i][j].getChave();
+	}
+	
+	public void setItem(int i, int j, Item item){
+		
+		this.matrizItems[i][j] = item;
+	}
+	
+	public Item getItem(int i, int j){
+		
+		return this.matrizItems[i][j];
 	}
 }

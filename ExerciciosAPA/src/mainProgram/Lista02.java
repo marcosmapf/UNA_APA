@@ -52,7 +52,7 @@ public class Lista02 {
 			System.out.print("\nVetor aleatorio: ");
 			bolha.getVetor().printVetor();  
 
-			bolha.ordenarBolha(); 
+			bolha.ordenar(); 
 			System.out.print("Vetor ordenado: ");
 			bolha.getVetor().printVetor(); 
 

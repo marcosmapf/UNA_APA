@@ -5,7 +5,7 @@ import java.security.SecureRandom;
 public class VetorItems {
 
 	int tamanhoVetor = 0;
-	Item[] vetorItems;
+	private Item[] vetorItems;
 
 	public VetorItems(int tamanho){
 
@@ -110,13 +110,24 @@ public class VetorItems {
 	/*<--------------------------------------------------------------------------------------->*/
 
 
-	public void setChave(int i, int valor){
+	public void setChaveOfItem(int i, int valor){
 
 		this.vetorItems[i].setChave(valor);
 	}
 
-	public int getChave(int i){
+	public int getChaveOfItem(int i){
 
 		return this.vetorItems[i].getChave();
+	}
+
+
+	public Item getItem(int i){
+
+		return this.vetorItems[i];
+	}
+
+	public void setItem(int i, Item item){
+
+		this.vetorItems[i] = item;
 	}
 }
