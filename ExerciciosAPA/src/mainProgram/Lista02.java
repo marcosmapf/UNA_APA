@@ -20,7 +20,7 @@ public class Lista02 {
 				+ "1  -> Calculo de somatórios\n"
 				+ "2  -> Calculo de produtórios\n"
 				+ "3  -> Vetor de numeros aleatorios\n"
-				+ "4  -> Vetor numeros aleatorios alternados\n");
+				+ "4  -> Ordenação de Algoritmos pelo método Bolha\n");
 
 		int opcao = leituraOpcao(1, 4);
 		escolherAtividade(opcao);
@@ -34,9 +34,9 @@ public class Lista02 {
 
 		switch (opcao){
 
-		case 1: Exercicio01 exercicio01 = new Exercicio01(100000); exercicio01.printResultado(); break;
+		case 1: Exercicio01 exercicio01 = new Exercicio01(100000); exercicio01.preencherVetor(); exercicio01.printResultado(); break;
 
-		case 2: Exercicio02 exercicio02 = new Exercicio02(1000000); exercicio02.printResultado(); break;
+		case 2: Exercicio02 exercicio02 = new Exercicio02(10000); exercicio02.preencherVetor(); exercicio02.printResultado(); break;
 
 		case 3: Exercicio03 exercicio03 = new Exercicio03(10000); exercicio03.printResultado(); break;
 

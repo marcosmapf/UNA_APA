@@ -1,7 +1,5 @@
 package lista01.Exercicio05;
 
-import java.util.Random;
-
 import custom.Objects.VetorInt;
 
 public class QuantParImpar {

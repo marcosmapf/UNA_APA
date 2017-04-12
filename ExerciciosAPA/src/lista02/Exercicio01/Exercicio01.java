@@ -1,6 +1,6 @@
 package lista02.Exercicio01;
 
-import java.util.Random;
+import java.security.SecureRandom;
 
 public class Exercicio01 {
 
@@ -18,27 +18,24 @@ public class Exercicio01 {
 
 	public Exercicio01(int tamanho){
 
-		vetorNumeros = preencherVetor(tamanho);
-		tamanhoVetor = tamanho;
+		this.tamanhoVetor = tamanho;
+		this.vetorNumeros = new int[tamanho];
 	}
-
 	
+
 	/*<--------------------------------------------------------------------------------------->*/
 	
 	
-	private int[] preencherVetor(int tamanho){
+	public void preencherVetor(){
 
-		int[] vetorAleatorio = new int[tamanho];
-		Random aleatorio = new Random(System.currentTimeMillis());
-		contador = 0;
+		SecureRandom aleatorio = new SecureRandom();
+		this.contador = 0;
 
 		for (int i = 0; i < 5; i ++){
 
-			vetorAleatorio[i] = aleatorio.nextInt(1000);
-			contador++;
+			this.vetorNumeros[i] = aleatorio.nextInt(1000);
+			this.contador++;
 		}	
-
-		return vetorAleatorio;
 	}
 
 	
@@ -47,7 +44,7 @@ public class Exercicio01 {
 	
 	public void printResultado(){
 
-		System.out.println("\nTamanho do vetor:  " + tamanhoVetor);
-		System.out.println("Valor do contador: " + contador + "\n");
+		System.out.println("\nTamanho do vetor:  " + this.tamanhoVetor);
+		System.out.println("Valor do contador: " + this.contador + "\n");
 	}
 }

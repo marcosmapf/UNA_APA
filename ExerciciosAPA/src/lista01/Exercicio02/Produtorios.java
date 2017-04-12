@@ -1,6 +1,5 @@
 package lista01.Exercicio02;
 
-import java.math.BigDecimal;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

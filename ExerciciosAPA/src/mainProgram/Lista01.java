@@ -33,7 +33,7 @@ public class Lista01 {
 				+ "8  -> Somar elementos abaixo da diagonal principal de uma matriz aleatória\n"
 				+ "9  -> Multiplicação de matrizes aleatórias\n"
 				+ "10 -> Venda de ingressos em sala de cinema\n"
-				+ "11 -> Distance entre estradas de cidades vizinhas\n");
+				+ "11 -> Distancia entre estradas de cidades vizinhas\n");
 
 		int opcao = leituraOpcao(1, 11);
 		escolherAtividade(opcao);

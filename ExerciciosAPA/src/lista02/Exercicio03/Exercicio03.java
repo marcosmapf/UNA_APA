@@ -1,6 +1,6 @@
 package lista02.Exercicio03;
 
-import java.util.Random;
+import java.security.SecureRandom;
 
 public class Exercicio03 {
 
@@ -13,50 +13,41 @@ public class Exercicio03 {
 	 */
 
 	int[][] matrizNumeros;
-	int tamanhoMatriz = 0;
-	int contador = 0;
-	
+	int tamanhoMatriz;
+	int contador;
+
 
 	public Exercicio03(int tamanho){
 
-		matrizNumeros = preencherMatriz(tamanho);
+		matrizNumeros = new int[tamanho][tamanho];
 		tamanhoMatriz = tamanho;
 	}
-	
-	public Exercicio03(int[][] matriz){
-		
-		matrizNumeros = matriz;
-		tamanhoMatriz = matriz.length;
-	}
-	
-	
+
+
 	/*<--------------------------------------------------------------------------------------->*/
-	
-	
-	private int[][] preencherMatriz(int tamanho){
 
-		int[][] matrizAleatoria = new int[tamanho][tamanho];
-		Random aleatorio = new Random(System.currentTimeMillis());
-		contador = 0;
 
-		for (int i = 0; i < tamanho; i ++){
-			for (int j = 0; j < tamanho; j ++){
+	public void preencherMatriz(){
 
-				matrizAleatoria[i][j] = aleatorio.nextInt(1000);
-				contador++;
+		SecureRandom aleatorio = new SecureRandom();
+		this.contador = 0;
+
+		for (int i = 0; i < tamanhoMatriz; i ++){
+			for (int j = 0; j < tamanhoMatriz; j ++){
+
+				this.matrizNumeros[i][j] = aleatorio.nextInt(1000);
+				this.contador++;
 			}	
 		}
-
-		return matrizAleatoria;
 	}
-	
-	
+
+
 	/*<--------------------------------------------------------------------------------------->*/
-	
-	
+
+
 	public void printResultado(){
 
-		System.out.println("\nTamanho da matriz: " + tamanhoMatriz);
-		System.out.println("Valor do contador: " + contador);
+		System.out.println("\nTamanho da matriz: " + this.tamanhoMatriz);
+		System.out.println("Valor do contador: " + this.contador);
 	}
 }
