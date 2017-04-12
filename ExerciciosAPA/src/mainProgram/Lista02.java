@@ -34,7 +34,7 @@ public class Lista02 {
 
 		switch (opcao){
 
-		case 1: Exercicio01 exercicio01 = new Exercicio01(100000); exercicio01.preencherVetor(); exercicio01.printResultado(); break;
+		case 1: Exercicio01 exercicio01 = new Exercicio01(10000); exercicio01.preencherVetor(); exercicio01.printResultado(); break;
 
 		case 2: Exercicio02 exercicio02 = new Exercicio02(10000); exercicio02.preencherVetor(); exercicio02.printResultado(); break;
 
@@ -47,7 +47,8 @@ public class Lista02 {
 			//int[] vetor = {10,9,8,7,6,5,4,3,2,1};
 			//OrdenacaoBolha bolha = new OrdenacaoBolha(vetor);
 
-			OrdenacaoBolha bolha = new OrdenacaoBolha(10); 
+			OrdenacaoBolha bolha = new OrdenacaoBolha(10);
+			bolha.getVetor().preencherAleatorio(1000);
 
 			System.out.print("\nVetor aleatorio: ");
 			bolha.getVetor().printVetor();  

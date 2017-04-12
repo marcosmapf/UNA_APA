@@ -53,25 +53,25 @@ public class VetorInt {
 	/*<--------------------------------------------------------------------------------------->*/
 
 
-	public void preencherAleatorio(){
+	public void preencherAleatorio(int limite){
 
 		SecureRandom aleatorio = new SecureRandom();
 
 		for (int i = 0; i < tamanhoVetor; i++){
 
-			vetorInteiros[i] = aleatorio.nextInt(1000);
+			vetorInteiros[i] = aleatorio.nextInt(limite);
 		}
 	}
 
 
-	public static int[] preencherAleatorio(int[] vetor){
+	public static int[] preencherAleatorio(int[] vetor, int limite){
 
 		int tamanho = vetor.length;
 		SecureRandom aleatorio = new SecureRandom();
 
 		for (int i = 0; i < tamanho; i++){
 
-			vetor[i] = aleatorio.nextInt(1000);
+			vetor[i] = aleatorio.nextInt(limite);
 		}
 
 		return vetor;
@@ -113,5 +113,10 @@ public class VetorInt {
 	public int getValor(int i){
 
 		return this.vetorInteiros[i];
+	}
+
+	public int getTamanhoVetor() {
+		
+		return tamanhoVetor;
 	}
 }

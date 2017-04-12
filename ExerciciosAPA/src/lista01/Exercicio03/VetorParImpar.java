@@ -15,13 +15,11 @@ public class VetorParImpar {
 	public VetorParImpar(int tamanho){
 
 		vetorNumeros = new VetorInt(tamanho);
-		vetorNumeros.preencherAleatorio();
 	}
 
 	public VetorParImpar(int[] vetor){
 
 		vetorNumeros = new VetorInt(vetor);
-		vetorNumeros.preencherAleatorio();
 	}
 
 

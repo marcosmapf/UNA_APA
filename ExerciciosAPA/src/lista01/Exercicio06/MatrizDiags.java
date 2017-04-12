@@ -17,7 +17,12 @@ public class MatrizDiags {
 
 		matrizNumeros = new MatrizInt(tamanho);
 		tamanhoMatriz = tamanho;
-		matrizNumeros.preencherAleatorio();
+	}
+	
+	public MatrizDiags(int[][] matriz){
+
+		this.matrizNumeros = new MatrizInt(matriz);
+		tamanhoMatriz = matriz.length;
 	}
 
 

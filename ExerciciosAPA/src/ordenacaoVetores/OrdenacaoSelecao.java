@@ -16,21 +16,18 @@ public class OrdenacaoSelecao extends Ordena {
 
 	public OrdenacaoSelecao(int tamanho){
 
-		vetorOrdena = new VetorItems(tamanho);
-		tamanhoVetor = tamanho;
-		vetorOrdena.preencherAleatorio();
+		this.vetorOrdena = new VetorItems(tamanho);
 	}
 
 
 	public OrdenacaoSelecao(int[] vetor){
 
 		vetorOrdena = new VetorItems(vetor);
-		tamanhoVetor = vetor.length;
 	}
 
 
 	/*<--------------------------------------------------------------------------------------->*/
-	
+
 
 	public void ordenar(){
 
@@ -40,12 +37,12 @@ public class OrdenacaoSelecao extends Ordena {
 		comparacoes = 0; 
 		trocas = 0;
 
-		for (int i = 0; i < tamanhoVetor - 1; i++){
-			
+		for (int i = 0; i < vetorOrdena.getTamanhoVetor() - 1; i++){
+
 			menor = vetorOrdena.getItem(i);
 			indice = i;	
-			
-			for (int j = i + 1; j < tamanhoVetor; j++){
+
+			for (int j = i + 1; j < vetorOrdena.getTamanhoVetor(); j++){
 
 				comparacoes++;				
 
@@ -68,25 +65,34 @@ public class OrdenacaoSelecao extends Ordena {
 
 
 	public void ordenar(Item[] vetor){
-
-		int auxiliar = 0;
+		
+		int tamanho = vetor.length;
+		Item menor = null;
+		int indice = 0;
 
 		comparacoes = 0; 
 		trocas = 0;
 
-		for (int i = 0; i < tamanhoVetor - 1; i++){
-			for (int j = 1; j < tamanhoVetor - i; j ++){
+		for (int i = 0; i < tamanho - 1; i++){
 
-				comparacoes++;
+			menor = vetor[i];
+			indice = i;	
 
-				if (vetor[j].getChave() < vetor[j-1].getChave()){
+			for (int j = i + 1; j < tamanho; j++){
 
-					auxiliar = vetor[j-1].getChave();
-					vetor[j-1].setChave(vetor[j].getChave());
-					vetor[j].setChave(auxiliar);
-					trocas++;
+				comparacoes++;				
+
+				//menor = vetorOrdena.getChaveOfItem(j) < menor.getChave()? vetorOrdena.getItem(j) : menor;				
+				if (vetorOrdena.getChaveOfItem(j) < menor.getChave()){
+
+					menor = vetor[j];			
+					indice = j;
 				}
 			}
-		}
+
+			trocas++;
+			vetor[indice] = vetor[i];
+			vetor[i] = menor;	
+		}		
 	}
 }

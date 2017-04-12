@@ -16,9 +16,8 @@ public class MatrizTransposta {
 
 	public MatrizTransposta(int tamanho){
 
-		matrizNumeros = new MatrizInt(tamanho);
-		tamanhoMatriz = tamanho;
-		matrizNumeros.preencherAleatorio();
+		this.matrizNumeros = new MatrizInt(tamanho);
+		this.tamanhoMatriz = tamanho;
 
 		System.out.println("\nA matriz aleatoria gerada é:\n");
 		matrizNumeros.printMatriz();

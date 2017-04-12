@@ -17,11 +17,11 @@ public class MultiplicacaoMatriz {
 
 		primeiraMatriz = new MatrizInt(tamanho);
 		tamanhoPrimeira = tamanho;
-		primeiraMatriz.preencherAleatorio();
+		primeiraMatriz.preencherAleatorio(1000);
 
 		segundaMatriz = new MatrizInt(tamanho);
 		tamanhoSegunda = tamanho;
-		segundaMatriz.preencherAleatorio();		
+		segundaMatriz.preencherAleatorio(1000);		
 
 		/*
 		System.out.println("\nA primeira matriz gerada é:\n");

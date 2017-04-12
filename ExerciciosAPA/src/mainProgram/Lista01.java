@@ -74,17 +74,23 @@ public class Lista01 {
 			break;
 
 
-		case 3: VetorParImpar parImpar = new VetorParImpar(10); parImpar.getVetorInt().preencherAleatorio(); parImpar.getVetorInt().printVetor(); parImpar.parImpar(); break;
+		case 3: VetorParImpar parImpar = new VetorParImpar(10); parImpar.getVetorInt().preencherAleatorio(1000); parImpar.getVetorInt().printVetor(); parImpar.parImpar(); break;
 
-		case 4: alternandoNumeros alternando = new alternandoNumeros(10); alternando.getVetorInt().printVetor(); alternando.flipFlop(); alternando.getVetorInt().printVetor(); break;
+		case 4: alternandoNumeros alternando = new alternandoNumeros(10); alternando.getVetorInt().preencherAleatorio(1000);alternando.getVetorInt().printVetor(); alternando.flipFlop(); alternando.getVetorInt().printVetor(); break;
 
-		case 5: QuantParImpar quanParImpar = new QuantParImpar(10); quanParImpar.getVetorInt().printVetor(); quanParImpar.countParImpar(); break;
+		case 5: QuantParImpar quantParImpar = new QuantParImpar(10); quantParImpar.getVetorInt().preencherAleatorio(1000); quantParImpar.getVetorInt().printVetor(); quantParImpar.countParImpar(); break;
 
-		case 6: MatrizDiags diagonais = new MatrizDiags(10); diagonais.getMatrizInt().printMatriz(); diagonais.diagPri(); diagonais.diagSec(); break;
+		case 6: MatrizDiags diagonais = new MatrizDiags(10); diagonais.getMatrizInt().preencherAleatorio(1000); diagonais.getMatrizInt().printMatriz(); diagonais.diagPri(); diagonais.diagSec(); break;
 
-		case 7: MatrizTransposta transposta = new MatrizTransposta(5); transposta.gerarTransposta(); break;
+		case 7: 
+			MatrizTransposta transposta = new MatrizTransposta(5); 
+			transposta.getMatrizInt().preencherAleatorio(1000); 
+			System.out.println("\nA matriz aleatoria gerada é:\n");
+			transposta.getMatrizInt().printMatriz();
+			transposta.gerarTransposta(); 
+			break;
 
-		case 8: SomaAbaixoDiag abaixoDiag = new SomaAbaixoDiag(10); abaixoDiag.getMatrizInt().printMatriz(); abaixoDiag.somaElementos(); break;
+		case 8: SomaAbaixoDiag abaixoDiag = new SomaAbaixoDiag(10); abaixoDiag.getMatrizInt().preencherAleatorio(1000); abaixoDiag.getMatrizInt().printMatriz(); abaixoDiag.somaElementos(); break;
 
 		case 9: 
 			MultiplicacaoMatriz multiplicacaoMatriz = new MultiplicacaoMatriz(4); 

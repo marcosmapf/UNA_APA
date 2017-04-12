@@ -18,7 +18,6 @@ public class SomaAbaixoDiag {
 
 		matrizNumeros = new MatrizInt(tamanho);
 		tamanhoMatriz = tamanho;
-		matrizNumeros.preencherAleatorio();
 	}	
 
 	public SomaAbaixoDiag(int[][] matriz){

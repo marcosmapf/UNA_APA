@@ -55,19 +55,19 @@ public class MatrizInt {
 	/*<--------------------------------------------------------------------------------------->*/
 
 
-	public void preencherAleatorio(){
+	public void preencherAleatorio(int limite){
 
 		SecureRandom aleatorio = new SecureRandom();
 
 		for (int i = 0; i < tamanhoMatriz; i++){
 			for (int j = 0; j < tamanhoMatriz; j++)
 
-				matrizInteiros[i][j] = aleatorio.nextInt(1000);
+				matrizInteiros[i][j] = aleatorio.nextInt(limite);
 		}
 	}
 
 
-	public static int[][] preencherAleatorio(int[][] matriz){
+	public static int[][] preencherAleatorio(int[][] matriz, int limite){
 
 		int tamanho = matriz.length;
 		SecureRandom aleatorio = new SecureRandom();
@@ -75,7 +75,7 @@ public class MatrizInt {
 		for (int i = 0; i < tamanho; i++){
 			for (int j = 0; j < tamanho; j++){
 
-				matriz[i][j] = aleatorio.nextInt(1000);
+				matriz[i][j] = aleatorio.nextInt(limite);
 			}
 		}
 

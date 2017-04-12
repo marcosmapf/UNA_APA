@@ -17,15 +17,12 @@ public class OrdenacaoBolha extends Ordena {
 	public OrdenacaoBolha(int tamanho){
 
 		vetorOrdena = new VetorItems(tamanho);
-		tamanhoVetor = tamanho;
-		vetorOrdena.preencherAleatorio();
 	}
 
 
 	public OrdenacaoBolha(int[] vetor){
 
 		vetorOrdena = new VetorItems(vetor);
-		tamanhoVetor = vetor.length;
 	}
 
 
@@ -63,8 +60,8 @@ public class OrdenacaoBolha extends Ordena {
 		comparacoes = 0; 
 		trocas = 0;
 
-		for (int i = 0; i < tamanhoVetor - 1; i++){
-			for (int j = 0; j < tamanhoVetor - 1 - i; j++){
+		for (int i = 0; i < vetorOrdena.getTamanhoVetor() - 1; i++){
+			for (int j = 0; j < vetorOrdena.getTamanhoVetor() - 1 - i; j++){
 
 				comparacoes++;
 
