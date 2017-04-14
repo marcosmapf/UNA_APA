@@ -13,7 +13,7 @@ public class VetorInt {
 		tamanhoVetor = tamanho;
 		zerarVetor(vetorInteiros);		
 	}
-	
+
 	public VetorInt(int[] vetor){
 
 		this.vetorInteiros = vetor;
@@ -37,16 +37,16 @@ public class VetorInt {
 
 
 
-	public static void printVetor(int[] matriz){
+	public static void printVetor(int[] vetor){
 
-		int tamanho = matriz.length;
+		int tamanho = vetor.length;
 
 		for (int i = 0; i < tamanho - 1; i ++){
 
-			System.out.print(matriz[i]+ ", ");
+			System.out.print(vetor[i]+ ", ");
 		}
 
-		System.out.println(matriz[tamanho]);
+		System.out.println(vetor[tamanho -1]);
 	}
 
 
@@ -105,18 +105,34 @@ public class VetorInt {
 	/*<--------------------------------------------------------------------------------------->*/
 
 
+	public static int[] extendVetor(int[] vetor, int aumentoTamanho){
+
+		int[] novoVetor = new int[vetor.length + aumentoTamanho];
+
+		for (int i = 0; i < vetor.length; i++){
+
+			novoVetor[i] = vetor[i];
+		}
+
+		return novoVetor;
+	}
+
+
+	/*<--------------------------------------------------------------------------------------->*/
+	
+	
 	public void setValor(int i, int valor){
 
 		this.vetorInteiros[i] = valor;
 	}
-	
+
 	public int getValor(int i){
 
 		return this.vetorInteiros[i];
 	}
 
 	public int getTamanhoVetor() {
-		
+
 		return tamanhoVetor;
 	}
 }

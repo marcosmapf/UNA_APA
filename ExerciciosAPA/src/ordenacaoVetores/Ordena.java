@@ -6,17 +6,27 @@ public abstract class Ordena {
 
 	protected VetorItems vetorOrdena;
 
-	public int comparacoes = 0;
-	public int trocas = 0;
+	protected int comparacoes = 0;
+	protected int trocas = 0;
 
 
 	/*<--------------------------------------------------------------------------------------->*/
 
-
+	
 	public VetorItems getVetor() {
+		
 		return vetorOrdena;
 	}
+	
+	public int getComparacoes() {
+		return comparacoes;
+	}
 
+	public int getTrocas() {
+		
+		return trocas;
+	}
+	
 
 	/*<--------------------------------------------------------------------------------------->*/
 

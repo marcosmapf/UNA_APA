@@ -42,16 +42,14 @@ public class VetorItems {
 
 
 
-	public static void printVetor(int[] vetor){
+	public static void printVetor(Item[] vetor){
 
-		int tamanho = vetor.length;
+		for (int i = 0; i < vetor.length - 1; i ++){
 
-		for (int i = 0; i < tamanho - 1; i ++){
-
-			System.out.print(vetor[i]+ ", ");
+			System.out.print(vetor[i].getChave()+ ", ");
 		}
 
-		System.out.println(vetor[tamanho]);
+		System.out.println(vetor[vetor.length - 1].getChave());
 	}
 
 
@@ -69,14 +67,14 @@ public class VetorItems {
 	}
 
 
-	public static int[] preencherAleatorio(int[] vetor, int limite){
+	public static Item[] preencherAleatorio(Item[] vetor, int limite){
 
 		int tamanho = vetor.length;
 		SecureRandom aleatorio = new SecureRandom();
 
 		for (int i = 0; i < tamanho; i++){
 
-			vetor[i] = aleatorio.nextInt(limite);
+			vetor[i] = new Item(aleatorio.nextInt(limite));
 		}
 
 		return vetor;

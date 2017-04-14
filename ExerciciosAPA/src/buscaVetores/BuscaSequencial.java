@@ -1,6 +1,8 @@
 package buscaVetores;
 
-public class BuscaSequencial {
+import custom.Objects.VetorInt;
+
+public class BuscaSequencial extends Busca {
 
 	private int[] vetorBusca;
 	private int comparacoes = 0;
@@ -8,6 +10,11 @@ public class BuscaSequencial {
 
 	/*<--------------------------------------------------------------------------------------->*/
 
+
+	public BuscaSequencial(int tamanho){
+
+		this.vetorBusca = VetorInt.preencherAleatorio(new int[tamanho], 200);
+	}
 
 	public BuscaSequencial(int[] vetor){
 
@@ -18,13 +25,25 @@ public class BuscaSequencial {
 	/*<--------------------------------------------------------------------------------------->*/
 
 
-	public int search (int v, int l, int r) {
+	public int search (int valor, int comeco, int posicaoFinal) {
 
-		for (int i = l; i < r; i++){
+		for (int i = comeco; i < posicaoFinal; i++){
 
 			this.comparacoes++;
-			
-			if (v == this.vetorBusca[i]){
+
+			if (valor == this.vetorBusca[i]){
+				return i;
+			}
+		}
+		return -1;
+	}
+
+
+	public static int search (int[] vetor, int valor, int comeco, int posicaoFinal) {
+
+		for (int i = comeco; i < posicaoFinal; i++){
+
+			if (valor == vetor[i]){
 				return i;
 			}
 		}

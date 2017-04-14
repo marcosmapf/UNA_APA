@@ -16,13 +16,13 @@ public class OrdenacaoBolha extends Ordena {
 
 	public OrdenacaoBolha(int tamanho){
 
-		vetorOrdena = new VetorItems(tamanho);
+		this.vetorOrdena = new VetorItems(tamanho);
 	}
 
 
 	public OrdenacaoBolha(int[] vetor){
 
-		vetorOrdena = new VetorItems(vetor);
+		this.vetorOrdena = new VetorItems(vetor);
 	}
 
 
@@ -57,53 +57,63 @@ public class OrdenacaoBolha extends Ordena {
 
 		Item auxiliar;
 
-		comparacoes = 0; 
-		trocas = 0;
+		this.comparacoes = 0; 
+		this.trocas = 0;
 
-		for (int i = 0; i < vetorOrdena.getTamanhoVetor() - 1; i++){
-			for (int j = 0; j < vetorOrdena.getTamanhoVetor() - 1 - i; j++){
+		for (int i = 0; i < this.vetorOrdena.getTamanhoVetor() - 1; i++){
+			for (int j = 0; j < this.vetorOrdena.getTamanhoVetor() - 1 - i; j++){
 
-				comparacoes++;
+				this.comparacoes++;
 
-				if (vetorOrdena.getChaveOfItem(j) > vetorOrdena.getChaveOfItem(j+1)){
+				if (this.vetorOrdena.getChaveOfItem(j) > this.vetorOrdena.getChaveOfItem(j+1)){
 
-					trocas++;
-					auxiliar = vetorOrdena.getItem(j+1);	
+					this.trocas++;
+					auxiliar = this.vetorOrdena.getItem(j+1);	
 
-					vetorOrdena.setItem(j+1, vetorOrdena.getItem(j));
-					vetorOrdena.setItem(j, auxiliar);	
+					this.vetorOrdena.setItem(j+1, vetorOrdena.getItem(j));
+					this.vetorOrdena.setItem(j, auxiliar);	
 				}
 			}
 		}
 	}
-	
-
-	/*<--------------------------------------------------------------------------------------->*/
 
 
-	public void ordenar(Item[] vetor){
+	public static Item[] ordenar(Item[] vetor){
 
 		Item auxiliar;
-		int tamanho = vetor.length;
 
-		comparacoes = 0; 
-		trocas = 0;
-
-		for (int i = 0; i < tamanho - 1; i++){
-			for (int j = 0; j < tamanho - 1 - i; j++){
-
-				comparacoes++;
+		for (int i = 0; i < vetor.length - 1; i++){
+			for (int j = 0; j < vetor.length - 1 - i; j++){
 
 				if (vetor[j].getChave() > vetor[j+1].getChave()){
 
-					trocas++;
 					auxiliar = vetor[j+1];
-					
 					vetor[j+1] = vetor[j];
 					vetor[j] = auxiliar;
-					
+
 				}
 			}
 		}
+
+		return  vetor;
+	}
+
+	public static int[] ordenar(int[] vetor){
+
+		int auxiliar = 0;
+
+		for (int i = 0; i < vetor.length - 1; i++){
+			for (int j = 0; j < vetor.length - 1 - i; j++){
+
+				if (vetor[j] > vetor[j+1]){
+
+					auxiliar = vetor[j+1];
+					vetor[j+1] = vetor[j];
+					vetor[j] = auxiliar;
+				}
+			}
+		}
+
+		return vetor;
 	}
 }
