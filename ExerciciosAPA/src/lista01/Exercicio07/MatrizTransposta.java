@@ -11,25 +11,18 @@ public class MatrizTransposta {
 
 
 	private MatrizInt matrizNumeros;
-	int tamanhoMatriz;
-
 
 	public MatrizTransposta(int tamanho){
 
 		this.matrizNumeros = new MatrizInt(tamanho);
-		this.tamanhoMatriz = tamanho;
-
-		System.out.println("\nA matriz aleatoria gerada é:\n");
-		matrizNumeros.printMatriz();
 	}
 
 	public MatrizTransposta(int[][] matriz){
 
-		matrizNumeros = new MatrizInt(matriz);
-		tamanhoMatriz = matriz.length;
+		this.matrizNumeros = new MatrizInt(matriz);
 
 		System.out.println("\nA matriz inserida é:\n");
-		matrizNumeros.printMatriz();;
+		this.matrizNumeros.printMatriz();;
 	}
 
 
@@ -38,12 +31,12 @@ public class MatrizTransposta {
 
 	public void gerarTransposta(){
 
-		int[][] matrizTransposta = new int[tamanhoMatriz][tamanhoMatriz];
+		int[][] matrizTransposta = new int[this.matrizNumeros.getTamanhoMatriz()][this.matrizNumeros.getTamanhoMatriz()];
 
-		for (int i = 0; i < tamanhoMatriz; i ++){
-			for (int j = 0; j < tamanhoMatriz; j++){
+		for (int i = 0; i < this.matrizNumeros.getTamanhoMatriz(); i ++){
+			for (int j = 0; j < this.matrizNumeros.getTamanhoMatriz(); j++){
 
-				matrizTransposta[i][j] = matrizNumeros.getValor(j, i);
+				matrizTransposta[i][j] = this.matrizNumeros.getValor(j, i);
 			}
 		}
 
@@ -56,7 +49,8 @@ public class MatrizTransposta {
 
 
 	public MatrizInt getMatrizInt() {
-		return matrizNumeros;
+		
+		return this.matrizNumeros;
 	}
 
 

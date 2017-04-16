@@ -4,8 +4,8 @@ import java.security.SecureRandom;
 
 public class VetorItems {
 
-	int tamanhoVetor = 0;
 	private Item[] vetorItems;
+	private int tamanhoVetor = 0;
 
 	public VetorItems(int tamanho){
 
@@ -129,7 +129,18 @@ public class VetorItems {
 	}
 
 	public int getTamanhoVetor() {
-		
-		return tamanhoVetor;
+
+		return this.tamanhoVetor;
+	}
+
+	public Item[] getVetorItems(){
+
+		return this.vetorItems;
+	}
+
+	public void setVetorItems(Item[] vetor){
+
+		this.vetorItems = vetor;
+		this.tamanhoVetor = vetor.length;
 	}
 }

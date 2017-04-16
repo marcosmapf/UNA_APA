@@ -4,20 +4,20 @@ import java.security.SecureRandom;
 
 public class MatrizInt {
 
-	int tamanhoMatriz = 0;
-	int[][] matrizInteiros;
+	private int tamanhoMatriz = 0;
+	private int[][] matrizInteiros;
 
 	public MatrizInt(int tamanho){
 
 		this.matrizInteiros = new int[tamanho][tamanho];
-		tamanhoMatriz = tamanho;
+		this.tamanhoMatriz = tamanho;
 		zerarMatriz(matrizInteiros);		
 	}
 
 	public MatrizInt(int[][] matriz){
 
 		this.matrizInteiros = matriz;
-		tamanhoMatriz = matriz.length;		
+		this.tamanhoMatriz = matriz.length;		
 	}
 
 
@@ -29,10 +29,10 @@ public class MatrizInt {
 		for (int i = 0; i < tamanhoMatriz; i ++){
 			for (int j = 0; j < tamanhoMatriz - 1; j++){
 
-				System.out.print(matrizInteiros[i][j]+ ", ");
+				System.out.print(this.matrizInteiros[i][j]+ ", ");
 			}
 
-			System.out.println(matrizInteiros[i][tamanhoMatriz - 1]);
+			System.out.println(this.matrizInteiros[i][tamanhoMatriz - 1]);
 		}
 	}
 
@@ -59,10 +59,10 @@ public class MatrizInt {
 
 		SecureRandom aleatorio = new SecureRandom();
 
-		for (int i = 0; i < tamanhoMatriz; i++){
-			for (int j = 0; j < tamanhoMatriz; j++)
+		for (int i = 0; i < this.tamanhoMatriz; i++){
+			for (int j = 0; j < this.tamanhoMatriz; j++)
 
-				matrizInteiros[i][j] = aleatorio.nextInt(limite);
+				this.matrizInteiros[i][j] = aleatorio.nextInt(limite);
 		}
 	}
 
@@ -88,10 +88,10 @@ public class MatrizInt {
 
 	public void zerarMatriz(){
 
-		for (int i = 0; i < tamanhoMatriz; i++){
-			for (int j = 0; j < tamanhoMatriz; j++)
+		for (int i = 0; i < this.tamanhoMatriz; i++){
+			for (int j = 0; j < this.tamanhoMatriz; j++)
 
-				matrizInteiros[i][j] = 0;
+				this.matrizInteiros[i][j] = 0;
 		}
 	}
 
@@ -122,4 +122,21 @@ public class MatrizInt {
 
 		this.matrizInteiros[i][j] = valor;
 	}
+
+	public int getTamanhoMatriz(){
+
+		return this.tamanhoMatriz; 
+	}
+
+	public int[][] getMatrizInteiros(){
+
+		return this.matrizInteiros;
+	}
+
+	public void setMatrizInteiros(int[][] matriz){
+
+		this.matrizInteiros = matriz;
+		this.tamanhoMatriz = matriz.length;
+	}
+
 }

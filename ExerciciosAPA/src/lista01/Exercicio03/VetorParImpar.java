@@ -14,12 +14,12 @@ public class VetorParImpar {
 
 	public VetorParImpar(int tamanho){
 
-		vetorNumeros = new VetorInt(tamanho);
+		this.vetorNumeros = new VetorInt(tamanho);
 	}
 
 	public VetorParImpar(int[] vetor){
 
-		vetorNumeros = new VetorInt(vetor);
+		this.vetorNumeros = new VetorInt(vetor);
 	}
 
 
@@ -43,6 +43,6 @@ public class VetorParImpar {
 
 	public VetorInt getVetorInt() {
 
-		return vetorNumeros;
+		return this.vetorNumeros;
 	}
 }

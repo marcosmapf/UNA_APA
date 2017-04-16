@@ -12,19 +12,16 @@ public class alternandoNumeros {
 	 */
 
 	private VetorInt vetorNumeros;
-	int tamanhoVetor;
 
 	public alternandoNumeros(int tamanho){
 
-		vetorNumeros = new VetorInt(tamanho);
-		tamanhoVetor = tamanho;
+		this.vetorNumeros = new VetorInt(tamanho);
 	}
 
 
 	public alternandoNumeros(int[] vetor){
 
-		vetorNumeros = new VetorInt(vetor);
-		tamanhoVetor = vetor.length;
+		this.vetorNumeros = new VetorInt(vetor);
 	}
 
 	/*<--------------------------------------------------------------------------------------->*/
@@ -32,12 +29,12 @@ public class alternandoNumeros {
 
 	public void flipFlop(){
 
-		int auxiliar = vetorNumeros.getValor(0);
+		int auxiliar = this.vetorNumeros.getValor(0);
 
 		System.out.println("\nAlternando o primeiro e o ultimo numeros");		
 
-		vetorNumeros.setValor(0, vetorNumeros.getValor(tamanhoVetor - 1));
-		vetorNumeros.setValor(tamanhoVetor - 1, auxiliar);
+		this.vetorNumeros.setValor(0, this.vetorNumeros.getValor(this.vetorNumeros.getTamanhoVetor() - 1));
+		this.vetorNumeros.setValor(this.vetorNumeros.getTamanhoVetor() - 1, auxiliar);
 	}
 
 
@@ -45,7 +42,8 @@ public class alternandoNumeros {
 
 
 	public VetorInt getVetorInt() {
-		return vetorNumeros;
+		
+		return this.vetorNumeros;
 	}
 
 

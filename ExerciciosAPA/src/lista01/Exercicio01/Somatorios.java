@@ -15,7 +15,6 @@ public class Somatorios {
 	static Scanner entrada = new Scanner(System.in);
 	private int limite;
 
-
 	public Somatorios(){
 
 		this.limite = leituraLimite();

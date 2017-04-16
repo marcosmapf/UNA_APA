@@ -11,18 +11,15 @@ public class MatrizDiags {
 	 */
 
 	private MatrizInt matrizNumeros;
-	int tamanhoMatriz;
 
 	public MatrizDiags(int tamanho){
 
-		matrizNumeros = new MatrizInt(tamanho);
-		tamanhoMatriz = tamanho;
+		this.matrizNumeros = new MatrizInt(tamanho);
 	}
 	
 	public MatrizDiags(int[][] matriz){
 
 		this.matrizNumeros = new MatrizInt(matriz);
-		tamanhoMatriz = matriz.length;
 	}
 
 
@@ -32,12 +29,12 @@ public class MatrizDiags {
 	public void diagPri(){
 
 		System.out.print("\nOs valores da diagonal principal são: ");
-		for (int i = 0; i < tamanhoMatriz -1; i++){
+		for (int i = 0; i < this.matrizNumeros.getTamanhoMatriz() -1; i++){
 
-			System.out.print(matrizNumeros.getValor(i, i) + ", ");
+			System.out.print(this.matrizNumeros.getValor(i, i) + ", ");
 		}	
 
-		System.out.print(matrizNumeros.getValor(tamanhoMatriz - 1, tamanhoMatriz - 1) + ".");
+		System.out.print(this.matrizNumeros.getValor(this.matrizNumeros.getTamanhoMatriz() - 1, this.matrizNumeros.getTamanhoMatriz() - 1) + ".");
 	}
 
 
@@ -60,12 +57,12 @@ public class MatrizDiags {
 	public void diagSec(){
 
 		System.out.print("\nOs valores da diagonal secundaria são: ");
-		for (int i = 0; i < tamanhoMatriz - 1; i++){
+		for (int i = 0; i < this.matrizNumeros.getTamanhoMatriz() - 1; i++){
 
-			System.out.print(matrizNumeros.getValor(i, tamanhoMatriz - i - 1) + ", ");
+			System.out.print(matrizNumeros.getValor(i, this.matrizNumeros.getTamanhoMatriz() - i - 1) + ", ");
 		}
 
-		System.out.print(matrizNumeros.getValor(tamanhoMatriz - 1, 0) + ".");
+		System.out.print(matrizNumeros.getValor(this.matrizNumeros.getTamanhoMatriz() - 1, 0) + ".");
 	}	
 
 
@@ -88,8 +85,8 @@ public class MatrizDiags {
 
 
 	public MatrizInt getMatrizInt() {
-		return matrizNumeros;
-
+		
+		return this.matrizNumeros;
 	}
 
 

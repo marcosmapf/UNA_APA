@@ -54,9 +54,12 @@ public class OrdenacaoSelecao extends Ordena {
 				}
 			}
 
-			this.trocas++;
-			this.vetorOrdena.setItem(indice, vetorOrdena.getItem(i));
-			this.vetorOrdena.setItem(i, menor);	
+			if (vetorOrdena.getChaveOfItem(i) != menor.getChave()){
+
+				this.trocas++;
+				this.vetorOrdena.setItem(indice, vetorOrdena.getItem(i));
+				this.vetorOrdena.setItem(i, menor);
+			}
 		}		
 	}
 

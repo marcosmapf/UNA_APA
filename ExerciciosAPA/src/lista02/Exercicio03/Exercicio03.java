@@ -12,15 +12,13 @@ public class Exercicio03 {
 	 * 	"Número de Operações (OP)" no Excel.
 	 */
 
-	int[][] matrizNumeros;
-	int tamanhoMatriz;
-	int contador;
+	private int[][] matrizNumeros;
+	private int contador;
 
 
 	public Exercicio03(int tamanho){
 
 		matrizNumeros = new int[tamanho][tamanho];
-		tamanhoMatriz = tamanho;
 	}
 
 
@@ -32,8 +30,8 @@ public class Exercicio03 {
 		SecureRandom aleatorio = new SecureRandom();
 		this.contador = 0;
 
-		for (int i = 0; i < tamanhoMatriz; i ++){
-			for (int j = 0; j < tamanhoMatriz; j ++){
+		for (int i = 0; i < matrizNumeros.length; i ++){
+			for (int j = 0; j < matrizNumeros.length; j ++){
 
 				this.matrizNumeros[i][j] = aleatorio.nextInt(1000);
 				this.contador++;
@@ -47,7 +45,7 @@ public class Exercicio03 {
 
 	public void printResultado(){
 
-		System.out.println("\nTamanho da matriz: " + this.tamanhoMatriz);
+		System.out.println("\nTamanho da matriz: " + this.matrizNumeros.length);
 		System.out.println("Valor do contador: " + this.contador);
 	}
 }

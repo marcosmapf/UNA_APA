@@ -4,8 +4,8 @@ import java.security.SecureRandom;
 
 public class VetorInt {
 
-	int tamanhoVetor = 0;
-	int[] vetorInteiros;
+	private int tamanhoVetor = 0;
+	private int[] vetorInteiros;
 
 	public VetorInt(int tamanho){
 
@@ -119,8 +119,8 @@ public class VetorInt {
 
 
 	/*<--------------------------------------------------------------------------------------->*/
-	
-	
+
+
 	public void setValor(int i, int valor){
 
 		this.vetorInteiros[i] = valor;
@@ -134,5 +134,16 @@ public class VetorInt {
 	public int getTamanhoVetor() {
 
 		return tamanhoVetor;
+	}
+
+	public int[] getVetorInteiros(){
+
+		return this.vetorInteiros;
+	}
+
+	public void setVetorInteiros(int[] vetor){
+
+		this.vetorInteiros = vetor;
+		this.tamanhoVetor = vetor.length;
 	}
 }

@@ -10,6 +10,7 @@ public class BuscaBinaria extends Busca {
 
 
 	/*<--------------------------------------------------------------------------------------->*/
+	
 
 	public BuscaBinaria(int tamanho){
 

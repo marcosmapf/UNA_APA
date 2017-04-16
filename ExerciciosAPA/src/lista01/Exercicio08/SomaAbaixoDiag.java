@@ -11,19 +11,15 @@ public class SomaAbaixoDiag {
 
 
 	private MatrizInt matrizNumeros;
-	int tamanhoMatriz;
-
 
 	public SomaAbaixoDiag(int tamanho){
 
-		matrizNumeros = new MatrizInt(tamanho);
-		tamanhoMatriz = tamanho;
+		this.matrizNumeros = new MatrizInt(tamanho);
 	}	
 
 	public SomaAbaixoDiag(int[][] matriz){
 
-		matrizNumeros = new MatrizInt(matriz);
-		tamanhoMatriz = matriz.length;
+		this.matrizNumeros = new MatrizInt(matriz);
 	}
 
 
@@ -34,10 +30,10 @@ public class SomaAbaixoDiag {
 
 		int somaAbaixoDiag = 0;
 
-		for (int i = 1; i < tamanhoMatriz; i ++){
+		for (int i = 1; i < this.matrizNumeros.getTamanhoMatriz(); i ++){
 			for (int j = 0; j < i; j++){
 
-				somaAbaixoDiag += matrizNumeros.getValor(i, j);
+				somaAbaixoDiag += this.matrizNumeros.getValor(i, j);
 			}
 		}
 
@@ -65,7 +61,8 @@ public class SomaAbaixoDiag {
 
 
 	public MatrizInt getMatrizInt() {
-		return matrizNumeros;
+
+		return this.matrizNumeros;
 	}
 
 

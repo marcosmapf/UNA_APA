@@ -11,17 +11,14 @@ public class MultiplicacaoMatriz {
 	 */
 
 	private MatrizInt primeiraMatriz, segundaMatriz;
-	private int tamanhoPrimeira, tamanhoSegunda;
 
 	public MultiplicacaoMatriz(int tamanho){
 
-		primeiraMatriz = new MatrizInt(tamanho);
-		tamanhoPrimeira = tamanho;
-		primeiraMatriz.preencherAleatorio(1000);
+		this.primeiraMatriz = new MatrizInt(tamanho);
+		this.primeiraMatriz.preencherAleatorio(1000);
 
-		segundaMatriz = new MatrizInt(tamanho);
-		tamanhoSegunda = tamanho;
-		segundaMatriz.preencherAleatorio(1000);		
+		this.segundaMatriz = new MatrizInt(tamanho);
+		this.segundaMatriz.preencherAleatorio(1000);		
 
 		/*
 		System.out.println("\nA primeira matriz gerada é:\n");
@@ -33,10 +30,8 @@ public class MultiplicacaoMatriz {
 
 	public MultiplicacaoMatriz(int[][] matriz1, int[][] matriz2){
 
-		primeiraMatriz = new MatrizInt(matriz1);
-		tamanhoPrimeira = matriz1.length;
-		segundaMatriz = new MatrizInt(matriz2);
-		tamanhoSegunda = matriz2.length; 		
+		this.primeiraMatriz = new MatrizInt(matriz1);
+		this.segundaMatriz = new MatrizInt(matriz2);		
 	}
 
 
@@ -45,13 +40,13 @@ public class MultiplicacaoMatriz {
 
 	public void prodMatriz(){
 
-		int[][] matrizResultado = new int[tamanhoPrimeira][tamanhoSegunda];
+		int[][] matrizResultado = new int[this.primeiraMatriz.getTamanhoMatriz()][this.segundaMatriz.getTamanhoMatriz()];
 
-		for (int k = 0; k < tamanhoSegunda; k++){
-			for (int i = 0; i < tamanhoPrimeira; i ++){
-				for (int j = 0; j < tamanhoSegunda; j++){
+		for (int k = 0; k < this.segundaMatriz.getTamanhoMatriz(); k++){
+			for (int i = 0; i < this.primeiraMatriz.getTamanhoMatriz(); i ++){
+				for (int j = 0; j < this.segundaMatriz.getTamanhoMatriz(); j++){
 
-					matrizResultado[i][k] += primeiraMatriz.getValor(i, j) * segundaMatriz.getValor(j, k);
+					matrizResultado[i][k] += this.primeiraMatriz.getValor(i, j) * this.segundaMatriz.getValor(j, k);
 				}
 			}
 		}
@@ -65,11 +60,13 @@ public class MultiplicacaoMatriz {
 
 
 	public MatrizInt getPrimeiraMatrizInt() {
-		return primeiraMatriz;
+
+		return this.primeiraMatriz;
 	}
 
 	public MatrizInt getSegundaMatrizInt() {
-		return segundaMatriz;
+
+		return this.segundaMatriz;
 	}
 
 

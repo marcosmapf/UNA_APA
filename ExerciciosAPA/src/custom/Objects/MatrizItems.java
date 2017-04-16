@@ -4,25 +4,25 @@ import java.security.SecureRandom;
 
 public class MatrizItems {
 
-	int tamanhoMatriz = 0;
-	Item[][] matrizItems;
+	private int tamanhoMatriz = 0;
+	private Item[][] matrizItems;
 
 	public MatrizItems(int tamanho){
 
 		this.matrizItems = new Item[tamanho][tamanho];
-		tamanhoMatriz = tamanho;
+		this.tamanhoMatriz = tamanho;
 		zerarMatriz(matrizItems);
 	}
 
 	public MatrizItems(int[][] vetor){
 
-		tamanhoMatriz = vetor.length;
-		matrizItems = new Item[tamanhoMatriz][tamanhoMatriz];
+		this.tamanhoMatriz = vetor.length;
+		this.matrizItems = new Item[this.tamanhoMatriz][this.tamanhoMatriz];
 
-		for (int i = 0; i < tamanhoMatriz; i++){
-			for (int j = 0; j < tamanhoMatriz; j++){
+		for (int i = 0; i < this.tamanhoMatriz; i++){
+			for (int j = 0; j < this.tamanhoMatriz; j++){
 
-				matrizItems[i][j] = new Item(vetor[i][j]);
+				this.matrizItems[i][j] = new Item(vetor[i][j]);
 			}
 		}
 	}
@@ -33,13 +33,13 @@ public class MatrizItems {
 
 	public void printMatriz(){
 
-		for (int i = 0; i < tamanhoMatriz; i ++){
-			for (int j = 0; j < tamanhoMatriz - 1; j++){
+		for (int i = 0; i < this.tamanhoMatriz; i ++){
+			for (int j = 0; j < this.tamanhoMatriz - 1; j++){
 
-				System.out.print(matrizItems[i][j].getChave()+ ", ");
+				System.out.print(this.matrizItems[i][j].getChave()+ ", ");
 			}
 
-			System.out.println(matrizItems[i][tamanhoMatriz].getChave());
+			System.out.println(this.matrizItems[i][this.tamanhoMatriz].getChave());
 		}
 	}
 
@@ -66,10 +66,10 @@ public class MatrizItems {
 
 		SecureRandom aleatorio = new SecureRandom();
 
-		for (int i = 0; i < tamanhoMatriz; i++){
-			for (int j = 0; j < tamanhoMatriz; j++)
+		for (int i = 0; i < this.tamanhoMatriz; i++){
+			for (int j = 0; j < this.tamanhoMatriz; j++)
 
-				matrizItems[i][j].setChave(aleatorio.nextInt(limite));
+				this.matrizItems[i][j].setChave(aleatorio.nextInt(limite));
 		}
 	}
 
@@ -95,10 +95,10 @@ public class MatrizItems {
 
 	public void zerarMatriz(){
 
-		for (int i = 0; i < tamanhoMatriz; i++){
-			for (int j = 0; j < tamanhoMatriz; j++)
+		for (int i = 0; i < this.tamanhoMatriz; i++){
+			for (int j = 0; j < this.tamanhoMatriz; j++)
 
-				matrizItems[i][j].setChave(0);
+				this.matrizItems[i][j].setChave(0);
 		}
 	}
 
@@ -130,14 +130,31 @@ public class MatrizItems {
 
 		return this.matrizItems[i][j].getChave();
 	}
-	
+
 	public void setItem(int i, int j, Item item){
-		
+
 		this.matrizItems[i][j] = item;
 	}
-	
+
 	public Item getItem(int i, int j){
-		
+
 		return this.matrizItems[i][j];
 	}
+
+	public int getTamanhoMatriz(){
+
+		return this.tamanhoMatriz;
+	}
+
+	public Item[][] getMatrizItems(){
+
+		return this.matrizItems;
+	}
+
+	public void setMatrizItems(Item[][] matriz){
+
+		this.matrizItems = matriz;
+		this.tamanhoMatriz = matriz.length;
+	}
+
 }

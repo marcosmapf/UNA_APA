@@ -18,20 +18,16 @@ public class Cinema {
 
 	private Scanner entrada = new Scanner(System.in);
 	MatrizInt secaoCinema;
-	int tamanhoSala;
-
 
 	public Cinema(int tamanho){
 
-		secaoCinema = new MatrizInt(tamanho);
-		tamanhoSala = tamanho;
+		this.secaoCinema = new MatrizInt(tamanho);
 	}
 
 
 	public Cinema(int[][] matriz){
 
-		secaoCinema = new MatrizInt(matriz);
-		tamanhoSala = matriz.length;;
+		this.secaoCinema = new MatrizInt(matriz);
 	}
 
 	/*<--------------------------------------------------------------------------------------->*/
@@ -48,15 +44,15 @@ public class Cinema {
 
 			while (available == false){
 
-				System.out.print("\nInsira a fileira (de 1 a " + tamanhoSala + ") que deseja sentar");
-				fileira = requererAssento(tamanhoSala) -1;
+				System.out.print("\nInsira a fileira (de 1 a " + secaoCinema.getTamanhoMatriz() + ") que deseja sentar");
+				fileira = requererAssento(secaoCinema.getTamanhoMatriz()) -1;
 
 				System.out.print("\nAssentos livres na fileira: ");
 				available = verificarDisponibilidade(fileira);
 			}
 
-			System.out.print("\nInsira o assento (de 1 a " + tamanhoSala + ")");
-			assento = requererAssento(tamanhoSala) -1;
+			System.out.print("\nInsira o assento (de 1 a " + secaoCinema.getTamanhoMatriz() + ")");
+			assento = requererAssento(secaoCinema.getTamanhoMatriz()) -1;
 
 			if (secaoCinema.getValor(fileira, assento) == 1){
 
@@ -110,7 +106,7 @@ public class Cinema {
 
 		int assentosLivres = 0;
 
-		for (int i = 0; i < tamanhoSala; i++){
+		for (int i = 0; i < secaoCinema.getTamanhoMatriz(); i++){
 
 			if (secaoCinema.getValor(fileira, i) == 0){
 
@@ -137,8 +133,8 @@ public class Cinema {
 		double ticket = valorTicket();
 		double total = 0;
 
-		for (int i = 0; i < tamanhoSala; i++){
-			for (int j = 0; j < tamanhoSala; j++){
+		for (int i = 0; i < secaoCinema.getTamanhoMatriz(); i++){
+			for (int j = 0; j < secaoCinema.getTamanhoMatriz(); j++){
 
 				if (secaoCinema.getValor(i, j) == 1){
 					total += ticket;
@@ -211,7 +207,8 @@ public class Cinema {
 
 
 	public MatrizInt getSecao() {
-		return secaoCinema;
+		
+		return this.secaoCinema;
 	}
 
 	/*<--------------------------------------------------------------------------------------->*/

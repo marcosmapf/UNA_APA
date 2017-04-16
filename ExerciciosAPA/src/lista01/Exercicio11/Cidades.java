@@ -21,14 +21,16 @@ public class Cidades {
 	Scanner entrada = new Scanner(System.in);
 
 	double[][] matrizEstradas;
-	int tamanhoMatriz = 0;
 	int roadCount = 0;
 
 	public Cidades(int tamanho){
 
-		matrizEstradas = preencherMatriz(tamanho);
-		tamanhoMatriz = tamanho;
-
+		this.matrizEstradas = preencherMatriz(tamanho);
+	}
+	
+	public Cidades (double[][] matriz){
+		
+		this.matrizEstradas = matriz;
 	}
 
 
@@ -38,7 +40,7 @@ public class Cidades {
 	private double[][] preencherMatriz(int tamanho){
 
 		double[][] matriz = new double[tamanho][tamanho];
-		
+
 		for (int i = 0; i < tamanho; i++){
 			for (int j = i + 1; j < tamanho; j++){
 
@@ -89,8 +91,8 @@ public class Cidades {
 
 		int roadCount = 0;
 
-		for (int i = 0; i < tamanhoMatriz; i ++){
-			for (int j = i + 1; j < tamanhoMatriz; j++){
+		for (int i = 0; i < matrizEstradas.length; i ++){
+			for (int j = i + 1; j < matrizEstradas.length; j++){
 
 				if (this.matrizEstradas[i][j] > 0) { 
 
@@ -112,8 +114,8 @@ public class Cidades {
 
 		System.out.println("\n**Matriz Resultado**\n");
 
-		for (int i = 0; i < this.tamanhoMatriz; i++){
-			for(int j = 0; j < this.tamanhoMatriz; j++){
+		for (int i = 0; i < this.matrizEstradas.length; i++){
+			for(int j = 0; j < this.matrizEstradas.length; j++){
 
 				System.out.print(this.matrizEstradas[i][j] + " ");
 			}
@@ -129,10 +131,11 @@ public class Cidades {
 
 	public void checarDistancia(int cidade1, int cidade2){
 
-		if (matrizEstradas[cidade1 - 1][cidade2-  1] > 0){
+		if (matrizEstradas[cidade1 - 1][cidade2 - 1] > 0){
 
 			System.out.printf("\nA distancia entre as cidades %d e %d e %.2fkm.", cidade1, cidade2, matrizEstradas[cidade1 - 1][cidade2 - 1]);
 		}		
+		else System.out.print("\nNão existe estrada entre as cidades");
 	}
 
 

@@ -68,8 +68,8 @@ public class OrdenacaoBolha extends Ordena {
 				if (this.vetorOrdena.getChaveOfItem(j) > this.vetorOrdena.getChaveOfItem(j+1)){
 
 					this.trocas++;
-					auxiliar = this.vetorOrdena.getItem(j+1);	
 
+					auxiliar = this.vetorOrdena.getItem(j+1);	
 					this.vetorOrdena.setItem(j+1, vetorOrdena.getItem(j));
 					this.vetorOrdena.setItem(j, auxiliar);	
 				}

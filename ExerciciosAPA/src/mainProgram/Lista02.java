@@ -17,9 +17,9 @@ public class Lista02 {
 
 
 		System.out.println("Informe qual exercicio você deseja rodar:\n"
-				+ "1  -> Calculo de somatórios\n"
-				+ "2  -> Calculo de produtórios\n"
-				+ "3  -> Vetor de numeros aleatorios\n"
+				+ "1  -> Preenchendo 5 posicoes de um vetor de N espacos\n"
+				+ "2  -> Preenchendo N posicoes de vetor de N espacos\n"
+				+ "3  -> Preenchendo NxN posicoes de uma matriz de NxN espacos\n"
 				+ "4  -> Ordenação de Algoritmos pelo método Bolha\n");
 
 		int opcao = leituraOpcao(1, 4);
@@ -34,11 +34,11 @@ public class Lista02 {
 
 		switch (opcao){
 
-		case 1: Exercicio01 exercicio01 = new Exercicio01(10000); exercicio01.preencherVetor(); exercicio01.printResultado(); break;
+		case 1: Exercicio01 complexidadeConstante = new Exercicio01(10000); complexidadeConstante.preencherVetor(); complexidadeConstante.printResultado(); break;
 
-		case 2: Exercicio02 exercicio02 = new Exercicio02(10000); exercicio02.preencherVetor(); exercicio02.printResultado(); break;
+		case 2: Exercicio02 complexidadeLinear = new Exercicio02(10000); complexidadeLinear.preencherVetor(); complexidadeLinear.printResultado(); break;
 
-		case 3: Exercicio03 exercicio03 = new Exercicio03(10000); exercicio03.printResultado(); break;
+		case 3: Exercicio03 complexidadeQuadratica = new Exercicio03(10000); complexidadeQuadratica.preencherMatriz(); complexidadeQuadratica.printResultado(); break;
 
 		case 4: 
 

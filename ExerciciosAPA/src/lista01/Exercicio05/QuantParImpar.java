@@ -11,20 +11,16 @@ public class QuantParImpar {
 	 */
 
 	private VetorInt vetorNumeros;
-	int tamanhoVetor;
-
 
 	public QuantParImpar(int tamanho){
 
-		vetorNumeros = new VetorInt(tamanho);
-		tamanhoVetor = tamanho;
+		this.vetorNumeros = new VetorInt(tamanho);
 	}
 
 
 	public QuantParImpar(int[] vetor){
 
-		vetorNumeros = new VetorInt(vetor);
-		tamanhoVetor = vetor.length;
+		this.vetorNumeros = new VetorInt(vetor);
 	}
 
 	/*<--------------------------------------------------------------------------------------->*/
@@ -34,9 +30,9 @@ public class QuantParImpar {
 
 		int par = 0, impar = 0;
 
-		for (int i = 0; i < tamanhoVetor; i++){
+		for (int i = 0; i < this.vetorNumeros.getTamanhoVetor(); i++){
 
-			if (vetorNumeros.getValor(i) % 2 == 0){
+			if (this.vetorNumeros.getValor(i) % 2 == 0){
 				par ++;
 			}
 			else impar ++;
@@ -45,12 +41,13 @@ public class QuantParImpar {
 		System.out.println("\nO vetor possui " + par + " numeros pares e " + impar + " numeros impares.");
 	}
 
-	
+
 	/*<--------------------------------------------------------------------------------------->*/
-	
-	
+
+
 	public VetorInt getVetorInt() {
-		return vetorNumeros;
+
+		return this.vetorNumeros;
 	}
 
 
