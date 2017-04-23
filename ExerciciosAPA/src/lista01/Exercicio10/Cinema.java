@@ -17,7 +17,7 @@ public class Cinema {
 	 */
 
 	private Scanner entrada = new Scanner(System.in);
-	MatrizInt secaoCinema;
+	private MatrizInt secaoCinema;
 
 	public Cinema(int tamanho){
 
@@ -36,33 +36,33 @@ public class Cinema {
 	public void novaCompra(){
 
 		int fileira = 0, assento = 0;
-		int repeat = 1;
+		int repetir = 1;
 
-		while (repeat == 1){
+		while (repetir == 1){
 
 			boolean available = false;
 
 			while (available == false){
 
-				System.out.print("\nInsira a fileira (de 1 a " + secaoCinema.getTamanhoMatriz() + ") que deseja sentar");
-				fileira = requererAssento(secaoCinema.getTamanhoMatriz()) -1;
+				System.out.print("\nInsira a fileira (de 1 a " + this.secaoCinema.getTamanhoMatriz() + ") que deseja sentar");
+				fileira = requererAssento(this.secaoCinema.getTamanhoMatriz()) -1;
 
 				System.out.print("\nAssentos livres na fileira: ");
 				available = verificarDisponibilidade(fileira);
 			}
 
-			System.out.print("\nInsira o assento (de 1 a " + secaoCinema.getTamanhoMatriz() + ")");
-			assento = requererAssento(secaoCinema.getTamanhoMatriz()) -1;
+			System.out.print("\nInsira o assento (de 1 a " + this.secaoCinema.getTamanhoMatriz() + ")");
+			assento = requererAssento(this.secaoCinema.getTamanhoMatriz()) -1;
 
-			if (secaoCinema.getValor(fileira, assento) == 1){
+			if (this.secaoCinema.getValor(fileira, assento) == 1){
 
 				System.out.println("Este assento esta ocupado. Por favor, escolha novamente.\n");
 			}
 			else {
-				secaoCinema.setValor(fileira, assento, 1);
+				this.secaoCinema.setValor(fileira, assento, 1);
 				System.out.print("\nSeu assento foi reservado na fileira " + (fileira +1) + ", assento " + (assento+ 1));
 
-				repeat = requererNovaCompra();
+				repetir = requererNovaCompra();
 			}
 		}
 	}
@@ -73,10 +73,10 @@ public class Cinema {
 
 	private int requererAssento(int tamanhoSala){
 
-		boolean repeticao = true;
 		int escolha = 0;
 
-		do{
+		while(true){
+
 			try{
 
 				System.out.print("\nOpcao: ");
@@ -86,16 +86,12 @@ public class Cinema {
 					throw new OutOfBoundsException();
 				}
 
-				repeticao = false;
-
+				return escolha;
 			}
 			catch (OutOfBoundsException e){}
 			catch (InputMismatchException e){ System.out.println("Você inseriu um caractere invalido, tente novamente"); entrada.next();}
 			catch(Exception e){ e.printStackTrace();}
-
 		}
-		while (repeticao == true);
-		return escolha;
 	}
 
 
@@ -106,9 +102,9 @@ public class Cinema {
 
 		int assentosLivres = 0;
 
-		for (int i = 0; i < secaoCinema.getTamanhoMatriz(); i++){
+		for (int i = 0; i < this.secaoCinema.getTamanhoMatriz(); i++){
 
-			if (secaoCinema.getValor(fileira, i) == 0){
+			if (this.secaoCinema.getValor(fileira, i) == 0){
 
 				assentosLivres += 1;
 				System.out.print(i + 1 + ", ");
@@ -133,10 +129,10 @@ public class Cinema {
 		double ticket = valorTicket();
 		double total = 0;
 
-		for (int i = 0; i < secaoCinema.getTamanhoMatriz(); i++){
-			for (int j = 0; j < secaoCinema.getTamanhoMatriz(); j++){
+		for (int i = 0; i < this.secaoCinema.getTamanhoMatriz(); i++){
+			for (int j = 0; j < this.secaoCinema.getTamanhoMatriz(); j++){
 
-				if (secaoCinema.getValor(i, j) == 1){
+				if (this.secaoCinema.getValor(i, j) == 1){
 					total += ticket;
 				}
 			}
@@ -151,10 +147,9 @@ public class Cinema {
 
 	private double valorTicket(){
 
-		boolean repeat = true;
 		double ticket = 0;
 
-		while (repeat == true){
+		while (true){
 
 			try{
 
@@ -166,14 +161,12 @@ public class Cinema {
 					throw new OutOfBoundsException();
 				}
 
-				repeat = false;
+				return ticket;
 			}
 			catch(OutOfBoundsException e){}
 			catch(InputMismatchException e){System.out.println("Você inseriu um caractere invalido, tente novamente"); entrada.next();}
 			catch(Exception e){ e.printStackTrace();}
 		}
-
-		return ticket;
 	}
 
 
@@ -182,35 +175,36 @@ public class Cinema {
 
 	private int requererNovaCompra(){
 
-		int repeat = 0;
+		int repetir = 0;
 
 		while (true){
 
 			try{
 
 				System.out.print("\nDigite 1 para fazer uma nova compra ou 0 para terminar a secao: ");
-				repeat = entrada.nextInt();
+				repetir = entrada.nextInt();
 
-				if (repeat < 0 || repeat > 1){
+				if (repetir < 0 || repetir > 1){
 
 					throw new OutOfBoundsException();
 				}
 
-				return repeat;
+				return repetir;
 			}
 			catch (OutOfBoundsException e){}
 			catch (InputMismatchException e){System.out.println("Caractere invalido, tente novamente."); entrada.next();}
 			catch (Exception e){}
-
 		}
 	}
 
 
+	/*<--------------------------------------------------------------------------------------->*/
+
+
 	public MatrizInt getSecao() {
-		
+
 		return this.secaoCinema;
 	}
 
 	/*<--------------------------------------------------------------------------------------->*/
-
 }

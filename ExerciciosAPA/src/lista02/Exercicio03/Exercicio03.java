@@ -18,7 +18,7 @@ public class Exercicio03 {
 
 	public Exercicio03(int tamanho){
 
-		matrizNumeros = new int[tamanho][tamanho];
+		this.matrizNumeros = new int[tamanho][tamanho];
 	}
 
 
@@ -30,8 +30,8 @@ public class Exercicio03 {
 		SecureRandom aleatorio = new SecureRandom();
 		this.contador = 0;
 
-		for (int i = 0; i < matrizNumeros.length; i ++){
-			for (int j = 0; j < matrizNumeros.length; j ++){
+		for (int i = 0; i < this.matrizNumeros.length; i ++){
+			for (int j = 0; j < this.matrizNumeros.length; j ++){
 
 				this.matrizNumeros[i][j] = aleatorio.nextInt(1000);
 				this.contador++;

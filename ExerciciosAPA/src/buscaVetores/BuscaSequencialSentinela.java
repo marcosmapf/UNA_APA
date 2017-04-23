@@ -27,12 +27,12 @@ public class BuscaSequencialSentinela extends Busca {
 
 	public int search (int valor, int comeco, int posicaoFinal) {
 
-		this.vetorBusca[vetorBusca.length -1] = valor;
+		this.vetorBusca[this.vetorBusca.length -1] = valor;
 		int i;		
 
-		for (i = comeco, this.comparacoes = 1; this.vetorBusca[i] != valor && i < posicaoFinal; i++, comparacoes++);
+		for (i = comeco, this.comparacoes = 1; this.vetorBusca[i] != valor && i < posicaoFinal; i++, this.comparacoes++);
 
-		if (i < vetorBusca.length){
+		if (i < this.vetorBusca.length){
 			return (i); /*Chave encontrada!*/
 		}
 		else return (-1); /*Sentinela encontrada.*/

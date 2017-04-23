@@ -10,7 +10,7 @@ public class BuscaBinaria extends Busca {
 
 
 	/*<--------------------------------------------------------------------------------------->*/
-	
+
 
 	public BuscaBinaria(int tamanho){
 
@@ -41,7 +41,8 @@ public class BuscaBinaria extends Busca {
 
 				posicaoFinal = pivo - 1;
 			}
-			else if (valor > vetorBusca[pivo]){
+			else if (valor > this.vetorBusca[pivo]){
+
 				comeco = pivo + 1;
 			}
 			else return pivo;

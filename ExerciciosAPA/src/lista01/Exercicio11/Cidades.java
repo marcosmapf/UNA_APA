@@ -18,18 +18,17 @@ public class Cidades {
 	 * ii. Retornar zero, se não houver uma estrada ligando as duas cidades.
 	 * */
 
-	Scanner entrada = new Scanner(System.in);
-
-	double[][] matrizEstradas;
-	int roadCount = 0;
+	static Scanner entrada = new Scanner(System.in);
+	private double[][] matrizEstradas;
 
 	public Cidades(int tamanho){
 
-		this.matrizEstradas = preencherMatriz(tamanho);
+		this.matrizEstradas = new double[tamanho][tamanho];
+		this.preencherMatriz();
 	}
-	
+
 	public Cidades (double[][] matriz){
-		
+
 		this.matrizEstradas = matriz;
 	}
 
@@ -37,20 +36,16 @@ public class Cidades {
 	/*<--------------------------------------------------------------------------------------->*/
 
 
-	private double[][] preencherMatriz(int tamanho){
+	private void preencherMatriz(){
 
-		double[][] matriz = new double[tamanho][tamanho];
-
-		for (int i = 0; i < tamanho; i++){
-			for (int j = i + 1; j < tamanho; j++){
+		for (int i = 0; i < matrizEstradas.length; i++){
+			for (int j = i + 1; j < matrizEstradas.length; j++){
 
 				System.out.print("Insira a distancia entra as cidades " + (i+1) + " e " + (j+1) + ": ");
-				matriz[i][j] = lerDistancia();
-				matriz[j][i] = matriz[i][j];
+				this.matrizEstradas[i][j] = lerDistancia();
+				this.matrizEstradas[j][i] = this.matrizEstradas[i][j];
 			}
 		}
-
-		return matriz;
 	}
 
 
@@ -91,8 +86,8 @@ public class Cidades {
 
 		int roadCount = 0;
 
-		for (int i = 0; i < matrizEstradas.length; i ++){
-			for (int j = i + 1; j < matrizEstradas.length; j++){
+		for (int i = 0; i < this.matrizEstradas.length; i ++){
+			for (int j = i + 1; j < this.matrizEstradas.length; j++){
 
 				if (this.matrizEstradas[i][j] > 0) { 
 
@@ -101,7 +96,6 @@ public class Cidades {
 			}
 		}
 
-		this.roadCount = roadCount;
 		System.out.println("\nExistem + " + roadCount + " estradas entre as cidades.");
 	}
 
@@ -140,6 +134,4 @@ public class Cidades {
 
 
 	/*<--------------------------------------------------------------------------------------->*/
-
-
 }

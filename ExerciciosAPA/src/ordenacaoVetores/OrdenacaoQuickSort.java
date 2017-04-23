@@ -36,27 +36,21 @@ public class OrdenacaoQuickSort extends Ordena {
 		this.particao (comeco, posicaoFinal);
 
 		if (comeco < this.ponteiroJ){
+
 			this.ordenar (comeco, this.ponteiroJ);
 		}
 		else if (this.ponteiroI < posicaoFinal){
+
 			this.ordenar (this.ponteiroI, posicaoFinal);
 		}
 
 	}
 
 
-	public static Item[] ordenar(Item[] vetor){
-
-		return vetor;
-	}
+	/*<--------------------------------------------------------------------------------------->*/
 
 
-	public static int[] ordenar(int[] vetor){
-
-		return vetor;
-	}
-
-	public void particao (int esquerda, int direita) {
+	private void particao (int esquerda, int direita) {
 
 		Item pivo, auxiliar;
 		this.ponteiroI = esquerda;
@@ -65,24 +59,28 @@ public class OrdenacaoQuickSort extends Ordena {
 
 		do {
 
-			while (this.vetorOrdena.getChaveOfItem(ponteiroI) < pivo.getChave()){
+			while (this.vetorOrdena.getChaveOfItem(this.ponteiroI) < pivo.getChave()){
 
-				comparacoes++;
+				this.comparacoes++;
 				this.ponteiroI++;
 			}
 
+			this.comparacoes++;
+
 			while (this.vetorOrdena.getChaveOfItem(this.ponteiroJ) > pivo.getChave()){
 
-				comparacoes++;
+				this.comparacoes++;
 				this.ponteiroJ--;
 			}
+
+			this.comparacoes++;
 
 			if (this.ponteiroI <= this.ponteiroJ) {
 
 				this.trocas++;
 
 				auxiliar = this.vetorOrdena.getItem(this.ponteiroI);
-				this.vetorOrdena.setItem(this.ponteiroI, this.vetorOrdena.getItem(ponteiroJ));
+				this.vetorOrdena.setItem(this.ponteiroI, this.vetorOrdena.getItem(this.ponteiroJ));
 				this.vetorOrdena.setItem(this.ponteiroJ, auxiliar);
 
 				this.ponteiroI++;

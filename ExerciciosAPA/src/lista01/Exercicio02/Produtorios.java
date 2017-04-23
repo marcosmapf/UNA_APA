@@ -18,7 +18,7 @@ public class Produtorios {
 
 	public Produtorios(){
 
-		this.limite = leituraLimite();
+		this.leituraLimite();
 	}
 
 
@@ -69,24 +69,26 @@ public class Produtorios {
 	/*<--------------------------------------------------------------------------------------->*/
 
 
-	public int leituraLimite(){
+	public void leituraLimite(){
 
-		int limite = 0;
+		boolean repetir = true;
 
-		try{
+		while(repetir){
 
-			System.out.print("\nInsira o limite natural do produtorio: ");
-			limite = entrada.nextInt();
+			try{
 
-			if (limite < 1 || limite > 10000){
-				throw new OutOfBoundsException();
+				System.out.print("\nInsira o limite natural do produtorio: ");
+				this.limite = entrada.nextInt();
+
+				if (this.limite < 1 || this.limite > 10000){
+					throw new OutOfBoundsException();
+				}
+
+				repetir = false;
 			}
+			catch(OutOfBoundsException e){}
+			catch(InputMismatchException e){ System.out.println("Voce inseriu um caractere incorreto."); entrada.next();}
+			catch(Exception e){ e.printStackTrace();}
 		}
-		catch(OutOfBoundsException e){}
-		catch(InputMismatchException e){ System.out.println("Voce inseriu um caractere incorreto."); entrada.next();}
-		catch(Exception e){ e.printStackTrace();}
-
-
-		return limite;
 	}
 }

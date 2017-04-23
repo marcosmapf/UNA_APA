@@ -15,6 +15,7 @@ public class SomaAbaixoDiag {
 	public SomaAbaixoDiag(int tamanho){
 
 		this.matrizNumeros = new MatrizInt(tamanho);
+		this.matrizNumeros.preencherAleatorio(200);
 	}	
 
 	public SomaAbaixoDiag(int[][] matriz){

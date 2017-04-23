@@ -16,6 +16,7 @@ public class alternandoNumeros {
 	public alternandoNumeros(int tamanho){
 
 		this.vetorNumeros = new VetorInt(tamanho);
+		this.vetorNumeros.preencherAleatorio(200);
 	}
 
 
@@ -42,12 +43,10 @@ public class alternandoNumeros {
 
 
 	public VetorInt getVetorInt() {
-		
+
 		return this.vetorNumeros;
 	}
 
 
 	/*<--------------------------------------------------------------------------------------->*/
-
-
 }

@@ -12,20 +12,20 @@ public class Exercicio01 {
 	 * "Tamanho do Vetor (N)" X "Número de Operações (OP)" no Excel.
 	 * */
 
-	int[] vetorNumeros;
-	int tamanhoVetor = 0;
-	int contador = 0;
+	private int[] vetorNumeros;
+	private int tamanhoVetor = 0;
+	private int contador = 0;
 
 	public Exercicio01(int tamanho){
 
 		this.tamanhoVetor = tamanho;
 		this.vetorNumeros = new int[tamanho];
 	}
-	
+
 
 	/*<--------------------------------------------------------------------------------------->*/
-	
-	
+
+
 	public void preencherVetor(){
 
 		SecureRandom aleatorio = new SecureRandom();
@@ -38,10 +38,10 @@ public class Exercicio01 {
 		}	
 	}
 
-	
+
 	/*<--------------------------------------------------------------------------------------->*/
-	
-	
+
+
 	public void printResultado(){
 
 		System.out.println("\nTamanho do vetor:  " + this.tamanhoVetor);

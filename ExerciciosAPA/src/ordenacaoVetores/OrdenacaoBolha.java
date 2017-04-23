@@ -98,6 +98,7 @@ public class OrdenacaoBolha extends Ordena {
 		return  vetor;
 	}
 
+
 	public static int[] ordenar(int[] vetor){
 
 		int auxiliar = 0;

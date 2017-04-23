@@ -3,6 +3,7 @@ package mainProgram;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import buscaVetores.Busca;
 import buscaVetores.BuscaBinaria;
 import buscaVetores.BuscaSequencial;
 import buscaVetores.BuscaSequencialSentinela;
@@ -26,7 +27,7 @@ public class Lista05 {
 
 	/*<--------------------------------------------------------------------------------------->*/
 
-	
+
 	public static void escolherAtividade (int opcao){
 
 		//int[] vetor = new int[tamanho];
@@ -41,16 +42,9 @@ public class Lista05 {
 		case 1:
 
 			BuscaSequencial sequencial = new BuscaSequencial(tamanho);			
-			int posicaoS = sequencial.search(codigo, 0, tamanho - 1);
+			int posicaoS = sequencial.search(codigo, 0, tamanho);
 
-			if (posicaoS == -1){
-
-				System.out.println("O valor não foi encontrado no vetor\n");
-			}
-			else System.out.printf("O valor %d foi encontrado na posicao %d do vetor.\n", codigo, posicaoS);
-
-			System.out.printf("\nNumero de comparações: %d", sequencial.getComparacoes());
-			System.out.printf("\nTempo de operacao: %.0fms", (System.currentTimeMillis() - tempoInicial));
+			printResultado(sequencial, codigo, posicaoS, tempoInicial);
 			break;
 
 		case 2:
@@ -58,14 +52,7 @@ public class Lista05 {
 			BuscaSequencialSentinela sequencialSentinela = new BuscaSequencialSentinela(tamanho);
 			int posicaoSS = sequencialSentinela.search(codigo, 0, tamanho - 1);
 
-			if (posicaoSS == -1){
-
-				System.out.println("O valor não foi encontrado no vetor\n");
-			}
-			else System.out.printf("O valor %d foi encontrado na posicao %d do vetor.\n", codigo, posicaoSS);
-
-			System.out.printf("\nNumero de comparações: %d", sequencialSentinela.getComparacoes());
-			System.out.printf("\nTempo de operacao: %.0fms", (System.currentTimeMillis() - tempoInicial));
+			printResultado(sequencialSentinela, codigo, posicaoSS, tempoInicial);
 			break;
 
 		case 3:
@@ -73,14 +60,7 @@ public class Lista05 {
 			BuscaBinaria binaria = new BuscaBinaria(tamanho);
 			int posicaoB = binaria.search(codigo, 0 , tamanho - 1);
 
-			if (posicaoB == -1){
-
-				System.out.println("O valor não foi encontrado no vetor\n");
-			}
-			else System.out.printf("O valor %d foi encontrado na posicao %d do vetor.\n", codigo, posicaoB);
-
-			System.out.printf("\nNumero de comparações: %d", binaria.getComparacoes());
-			System.out.printf("\nTempo de operacao: %.0fms", (System.currentTimeMillis() - tempoInicial));
+			printResultado(binaria, codigo, posicaoB, tempoInicial);
 			break;
 		}	
 	}
@@ -92,9 +72,8 @@ public class Lista05 {
 	public static int leituraOpcao(int min, int max) {
 
 		int exercicio = 0;
-		boolean repetir = true;
 
-		while (repetir == true){
+		while (true){
 
 			try {
 
@@ -105,15 +84,12 @@ public class Lista05 {
 					throw new OutOfBoundsException();
 				}
 
-				repetir = false;
+				return exercicio;
 			} 
 			catch (OutOfBoundsException e){}
 			catch (InputMismatchException e){ System.out.println("Você inseriu um caractere invalido. Insira um exercício válido"); entrada.next();}
 			catch(Exception e){ e.printStackTrace();}
-
 		}
-
-		return exercicio;
 	}
 
 
@@ -123,26 +99,23 @@ public class Lista05 {
 	public static int leituraTamanho(){
 
 		int tamanho = 0;
-		boolean repetir = true;
 
-		while (repetir == true){
+		while (true){
 			try{
 
-				System.out.print("\nInsira o tamanho do vetor a ser gerado: ");
+				System.out.print("Insira o tamanho do vetor a ser gerado: ");
 				tamanho = entrada.nextInt();
 
 				if (tamanho < 1 || tamanho > 13000){
 					throw new OutOfBoundsException();
 				}
 
-				repetir = false;
+				return tamanho;
 			}
 			catch(OutOfBoundsException e){}
 			catch(InputMismatchException e){ System.out.println("Voce inseriu um caractere incorreto."); entrada.next();}
 			catch(Exception e){ e.printStackTrace();}
 		}
-
-		return tamanho;
 	}
 
 
@@ -152,26 +125,39 @@ public class Lista05 {
 	public static int leituraCodigo(){
 
 		int codigo = 0;
-		boolean repetir = true;
 
-		while (repetir == true){
+		while (true){
 
 			try{
 
-				System.out.print("\nInsira o codigo do cartao a ser procurado: ");
+				System.out.print("Insira o codigo do cartao a ser procurado: ");
 				codigo = entrada.nextInt();
 
 				if (codigo < 1 || codigo > 20000){
 					throw new OutOfBoundsException();
 				}
-				
-				repetir = false;
+
+				return codigo;
 			}
 			catch(OutOfBoundsException e){}
 			catch(InputMismatchException e){ System.out.println("Voce inseriu um caractere incorreto."); entrada.next();}
 			catch(Exception e){ e.printStackTrace();}
 		}
+	}
 
-		return codigo;
+
+	/*<--------------------------------------------------------------------------------------->*/
+
+
+	public static void printResultado(Busca busca, int codigo, int posicao, double tempoInicial){
+
+		if (posicao == -1){
+
+			System.out.println("O valor não foi encontrado no vetor\n");
+		}
+		else System.out.printf("O valor %d foi encontrado na posicao %d do vetor.\n", codigo, posicao);
+
+		System.out.printf("\nNumero de comparações: %d", busca.getComparacoes());
+		System.out.printf("\nTempo de operacao: %.0fms", (System.currentTimeMillis() - tempoInicial));
 	}
 }

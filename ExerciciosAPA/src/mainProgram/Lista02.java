@@ -32,13 +32,15 @@ public class Lista02 {
 
 	public static void escolherAtividade (int opcao){
 
+		int tamanho = requisitarTamanho();
+
 		switch (opcao){
 
-		case 1: Exercicio01 complexidadeConstante = new Exercicio01(10000); complexidadeConstante.preencherVetor(); complexidadeConstante.printResultado(); break;
+		case 1: Exercicio01 complexidadeConstante = new Exercicio01(tamanho); complexidadeConstante.preencherVetor(); complexidadeConstante.printResultado(); break;
 
-		case 2: Exercicio02 complexidadeLinear = new Exercicio02(10000); complexidadeLinear.preencherVetor(); complexidadeLinear.printResultado(); break;
+		case 2: Exercicio02 complexidadeLinear = new Exercicio02(tamanho); complexidadeLinear.preencherVetor(); complexidadeLinear.printResultado(); break;
 
-		case 3: Exercicio03 complexidadeQuadratica = new Exercicio03(10000); complexidadeQuadratica.preencherMatriz(); complexidadeQuadratica.printResultado(); break;
+		case 3: Exercicio03 complexidadeQuadratica = new Exercicio03(tamanho); complexidadeQuadratica.preencherMatriz(); complexidadeQuadratica.printResultado(); break;
 
 		case 4: 
 
@@ -47,7 +49,7 @@ public class Lista02 {
 			//int[] vetor = {10,9,8,7,6,5,4,3,2,1};
 			//OrdenacaoBolha bolha = new OrdenacaoBolha(vetor);
 
-			OrdenacaoBolha bolha = new OrdenacaoBolha(10);
+			OrdenacaoBolha bolha = new OrdenacaoBolha(tamanho);
 			bolha.getVetor().preencherAleatorio(1000);
 
 			System.out.print("\nVetor aleatorio: ");
@@ -70,9 +72,8 @@ public class Lista02 {
 	public static int leituraOpcao(int min, int max) {
 
 		int exercicio = 0;
-		boolean repeate = true;
 
-		while (repeate == true){
+		while (true){
 
 			try {
 
@@ -83,14 +84,39 @@ public class Lista02 {
 					throw new OutOfBoundsException();
 				}
 
-				repeate = false;
+				return exercicio;
 			} 
 			catch (OutOfBoundsException e){}
 			catch (InputMismatchException e){ System.out.println("Você inseriu um caractere invalido. Insira um exercício válido"); entrada.next();}
 			catch(Exception e){ e.printStackTrace();}
 
 		}
+	}
 
-		return exercicio;
+
+	/*<--------------------------------------------------------------------------------------->*/
+
+
+	public static int requisitarTamanho(){
+
+		int tamanho = 0;
+
+		while (true){
+
+			try {
+
+				System.out.print("Informe o tamanho do vetor: ");
+				tamanho = entrada.nextInt();
+
+				if (tamanho < 5 || tamanho > 13000){
+					throw new OutOfBoundsException();
+				}
+
+				return tamanho;
+			} 
+			catch (OutOfBoundsException e){}
+			catch (InputMismatchException e){ System.out.println("Você inseriu um caractere invalido. Insira um exercício válido"); entrada.next();}
+			catch(Exception e){ e.printStackTrace();}
+		}
 	}
 }

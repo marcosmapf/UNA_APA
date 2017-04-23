@@ -15,6 +15,7 @@ public class QuantParImpar {
 	public QuantParImpar(int tamanho){
 
 		this.vetorNumeros = new VetorInt(tamanho);
+		this.vetorNumeros.preencherAleatorio(200);
 	}
 
 
@@ -33,6 +34,7 @@ public class QuantParImpar {
 		for (int i = 0; i < this.vetorNumeros.getTamanhoVetor(); i++){
 
 			if (this.vetorNumeros.getValor(i) % 2 == 0){
+				
 				par ++;
 			}
 			else impar ++;
@@ -52,6 +54,4 @@ public class QuantParImpar {
 
 
 	/*<--------------------------------------------------------------------------------------->*/
-
-
 }

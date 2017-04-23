@@ -23,7 +23,7 @@ public class OrdenacaoInsercao extends Ordena {
 
 	public OrdenacaoInsercao(int[] vetor){
 
-		vetorOrdena = new VetorItems(vetor);
+		this.vetorOrdena = new VetorItems(vetor);
 	}
 
 

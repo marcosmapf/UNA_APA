@@ -15,6 +15,7 @@ public class VetorParImpar {
 	public VetorParImpar(int tamanho){
 
 		this.vetorNumeros = new VetorInt(tamanho);
+		this.vetorNumeros.preencherAleatorio(200);
 	}
 
 	public VetorParImpar(int[] vetor){

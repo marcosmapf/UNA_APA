@@ -11,10 +11,12 @@ public class MatrizTransposta {
 
 
 	private MatrizInt matrizNumeros;
+	private MatrizInt matrizTransposta;
 
 	public MatrizTransposta(int tamanho){
 
 		this.matrizNumeros = new MatrizInt(tamanho);
+		this.matrizNumeros.preencherAleatorio(200);
 	}
 
 	public MatrizTransposta(int[][] matriz){
@@ -22,7 +24,7 @@ public class MatrizTransposta {
 		this.matrizNumeros = new MatrizInt(matriz);
 
 		System.out.println("\nA matriz inserida é:\n");
-		this.matrizNumeros.printMatriz();;
+		this.matrizNumeros.printMatriz();
 	}
 
 
@@ -31,17 +33,14 @@ public class MatrizTransposta {
 
 	public void gerarTransposta(){
 
-		int[][] matrizTransposta = new int[this.matrizNumeros.getTamanhoMatriz()][this.matrizNumeros.getTamanhoMatriz()];
+		this.matrizTransposta = new MatrizInt(this.matrizNumeros.getTamanhoMatriz());
 
 		for (int i = 0; i < this.matrizNumeros.getTamanhoMatriz(); i ++){
 			for (int j = 0; j < this.matrizNumeros.getTamanhoMatriz(); j++){
 
-				matrizTransposta[i][j] = this.matrizNumeros.getValor(j, i);
+				matrizTransposta.setValor(i, j, this.matrizNumeros.getValor(j, i));
 			}
 		}
-
-		System.out.println("\nA matriz transposta é:\n");
-		MatrizInt.printMatriz(matrizTransposta);
 	}
 
 
@@ -49,11 +48,27 @@ public class MatrizTransposta {
 
 
 	public MatrizInt getMatrizInt() {
-		
+
 		return this.matrizNumeros;
 	}
 
+	public MatrizInt getMatrizTransposta(){
+
+		try {
+
+			if (matrizTransposta == null){
+
+				throw new NullPointerException();
+			}
+			return this.matrizTransposta;
+		}
+		catch (NullPointerException e){
+
+			System.out.println("A matriz transposta ainda não foi gerada\n");
+			this.matrizTransposta = new MatrizInt(matrizNumeros.getTamanhoMatriz());
+			return matrizTransposta;
+		}
+	}
 
 	/*<--------------------------------------------------------------------------------------->*/
-
 }

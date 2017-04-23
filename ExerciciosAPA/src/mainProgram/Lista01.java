@@ -74,20 +74,21 @@ public class Lista01 {
 			break;
 
 
-		case 3: VetorParImpar parImpar = new VetorParImpar(10); parImpar.getVetorInt().preencherAleatorio(1000); parImpar.getVetorInt().printVetor(); parImpar.parImpar(); break;
+		case 3: VetorParImpar parImpar = new VetorParImpar(10); parImpar.getVetorInt().printVetor(); parImpar.parImpar(); break;
 
-		case 4: alternandoNumeros alternando = new alternandoNumeros(10); alternando.getVetorInt().preencherAleatorio(1000);alternando.getVetorInt().printVetor(); alternando.flipFlop(); alternando.getVetorInt().printVetor(); break;
+		case 4: alternandoNumeros alternando = new alternandoNumeros(10); alternando.getVetorInt().printVetor(); alternando.flipFlop(); alternando.getVetorInt().printVetor(); break;
 
-		case 5: QuantParImpar quantParImpar = new QuantParImpar(10); quantParImpar.getVetorInt().preencherAleatorio(1000); quantParImpar.getVetorInt().printVetor(); quantParImpar.countParImpar(); break;
+		case 5: QuantParImpar quantParImpar = new QuantParImpar(10); quantParImpar.getVetorInt().printVetor(); quantParImpar.countParImpar(); break;
 
-		case 6: MatrizDiags diagonais = new MatrizDiags(10); diagonais.getMatrizInt().preencherAleatorio(1000); diagonais.getMatrizInt().printMatriz(); diagonais.diagPri(); diagonais.diagSec(); break;
+		case 6: MatrizDiags diagonais = new MatrizDiags(10); diagonais.getMatrizInt().printMatriz(); diagonais.diagPri(); diagonais.diagSec(); break;
 
 		case 7: 
 			MatrizTransposta transposta = new MatrizTransposta(5); 
-			transposta.getMatrizInt().preencherAleatorio(1000); 
 			System.out.println("\nA matriz aleatoria gerada é:\n");
 			transposta.getMatrizInt().printMatriz();
-			transposta.gerarTransposta(); 
+			//transposta.gerarTransposta();
+			System.out.println("\nA matriz transposta é:\n");
+			transposta.getMatrizTransposta().printMatriz();
 			break;
 
 		case 8: SomaAbaixoDiag abaixoDiag = new SomaAbaixoDiag(10); abaixoDiag.getMatrizInt().preencherAleatorio(1000); abaixoDiag.getMatrizInt().printMatriz(); abaixoDiag.somaElementos(); break;
@@ -99,7 +100,6 @@ public class Lista01 {
 			multiplicacaoMatriz.getPrimeiraMatrizInt().printMatriz();
 			System.out.println("\nA segunda matriz gerada é:\n");
 			multiplicacaoMatriz.getSegundaMatrizInt().printMatriz();
-
 			multiplicacaoMatriz.prodMatriz();			
 			break;
 
@@ -116,9 +116,8 @@ public class Lista01 {
 	public static int leituraOpcao(int min, int max) {
 
 		int exercicio = 0;
-		boolean repeate = true;
 
-		while (repeate == true){
+		while (true){
 
 			try {
 
@@ -129,14 +128,11 @@ public class Lista01 {
 					throw new OutOfBoundsException();
 				}
 
-				repeate = false;
+				return exercicio;
 			} 
 			catch (OutOfBoundsException e){}
 			catch (InputMismatchException e){ System.out.println("Você inseriu um caractere invalido. Insira um exercício válido"); entrada.next();}
 			catch(Exception e){ e.printStackTrace();}
-
 		}
-
-		return exercicio;
 	}
 }

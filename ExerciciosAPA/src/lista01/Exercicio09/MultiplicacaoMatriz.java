@@ -15,10 +15,10 @@ public class MultiplicacaoMatriz {
 	public MultiplicacaoMatriz(int tamanho){
 
 		this.primeiraMatriz = new MatrizInt(tamanho);
-		this.primeiraMatriz.preencherAleatorio(1000);
+		this.primeiraMatriz.preencherAleatorio(200);
 
 		this.segundaMatriz = new MatrizInt(tamanho);
-		this.segundaMatriz.preencherAleatorio(1000);		
+		this.segundaMatriz.preencherAleatorio(200);		
 
 		/*
 		System.out.println("\nA primeira matriz gerada é:\n");

@@ -15,8 +15,9 @@ public class MatrizDiags {
 	public MatrizDiags(int tamanho){
 
 		this.matrizNumeros = new MatrizInt(tamanho);
+		this.matrizNumeros.preencherAleatorio(200);
 	}
-	
+
 	public MatrizDiags(int[][] matriz){
 
 		this.matrizNumeros = new MatrizInt(matriz);
@@ -29,6 +30,7 @@ public class MatrizDiags {
 	public void diagPri(){
 
 		System.out.print("\nOs valores da diagonal principal são: ");
+
 		for (int i = 0; i < this.matrizNumeros.getTamanhoMatriz() -1; i++){
 
 			System.out.print(this.matrizNumeros.getValor(i, i) + ", ");
@@ -43,6 +45,7 @@ public class MatrizDiags {
 		int tamanho = matriz.length;
 
 		System.out.print("\nOs valores da diagonal principal são: ");
+
 		for (int i = 0; i < tamanho -1; i++){
 
 			System.out.print(matriz[i][i] + ", ");
@@ -57,12 +60,13 @@ public class MatrizDiags {
 	public void diagSec(){
 
 		System.out.print("\nOs valores da diagonal secundaria são: ");
+
 		for (int i = 0; i < this.matrizNumeros.getTamanhoMatriz() - 1; i++){
 
-			System.out.print(matrizNumeros.getValor(i, this.matrizNumeros.getTamanhoMatriz() - i - 1) + ", ");
+			System.out.print(this.matrizNumeros.getValor(i, this.matrizNumeros.getTamanhoMatriz() - i - 1) + ", ");
 		}
 
-		System.out.print(matrizNumeros.getValor(this.matrizNumeros.getTamanhoMatriz() - 1, 0) + ".");
+		System.out.print(this.matrizNumeros.getValor(this.matrizNumeros.getTamanhoMatriz() - 1, 0) + ".");
 	}	
 
 
@@ -72,6 +76,7 @@ public class MatrizDiags {
 		int tamanho = matriz.length;
 
 		System.out.print("\nOs valores da diagonal secundaria são: ");
+
 		for (int i = 0; i < tamanho - 1; i++){
 
 			System.out.print(matriz[i][tamanho - i - 1] + ", ");
@@ -85,7 +90,7 @@ public class MatrizDiags {
 
 
 	public MatrizInt getMatrizInt() {
-		
+
 		return this.matrizNumeros;
 	}
 

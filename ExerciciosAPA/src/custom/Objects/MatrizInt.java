@@ -26,8 +26,8 @@ public class MatrizInt {
 
 	public void printMatriz(){
 
-		for (int i = 0; i < tamanhoMatriz; i ++){
-			for (int j = 0; j < tamanhoMatriz - 1; j++){
+		for (int i = 0; i < this.tamanhoMatriz; i ++){
+			for (int j = 0; j < this.tamanhoMatriz - 1; j++){
 
 				System.out.print(this.matrizInteiros[i][j]+ ", ");
 			}
@@ -80,6 +80,26 @@ public class MatrizInt {
 		}
 
 		return matriz;
+	}
+
+
+	/*<--------------------------------------------------------------------------------------->*/
+
+
+	public int[][] prodMatriz(int[][] primeiraMatriz, int[][] segundaMatriz){
+
+		int[][] matrizResultado = new int[primeiraMatriz.length][segundaMatriz.length];
+
+		for (int k = 0; k < segundaMatriz.length; k++){
+			for (int i = 0; i < primeiraMatriz.length; i ++){
+				for (int j = 0; j < segundaMatriz.length; j++){
+
+					matrizResultado[i][k] += primeiraMatriz[i][j] * segundaMatriz[j][k];
+				}
+			}
+		}
+
+		return matrizResultado;
 	}
 
 
