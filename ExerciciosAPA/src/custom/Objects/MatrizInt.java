@@ -86,7 +86,7 @@ public class MatrizInt {
 	/*<--------------------------------------------------------------------------------------->*/
 
 
-	public int[][] prodMatriz(int[][] primeiraMatriz, int[][] segundaMatriz){
+	public static int[][] prodMatriz(int[][] primeiraMatriz, int[][] segundaMatriz){
 
 		int[][] matrizResultado = new int[primeiraMatriz.length][segundaMatriz.length];
 
