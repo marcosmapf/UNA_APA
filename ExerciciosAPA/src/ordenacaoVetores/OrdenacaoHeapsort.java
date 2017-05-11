@@ -30,17 +30,14 @@ public class OrdenacaoHeapsort extends Ordena {
 	/*<--------------------------------------------------------------------------------------->*/
 
 
-	public void ordenar(){
+	public void ordenar (){
+
+		buildMaxHeap();
 		
-		ordenar(vetorOrdena.getTamanhoVetor() -1);
-	}
-	
-	
-	public void ordenar (int posicaoFinal){
+		System.out.print("HEAP: ");
+		this.vetorOrdena.printVetor();
 
-		buildMaxHeap(posicaoFinal);
-
-		for (int i = posicaoFinal; i > 0; i--){
+		for (int i = tamanhoHeap; i > 0; i--){
 
 			trocaItems(0, i);
 			this.tamanhoHeap = this.tamanhoHeap - 1;
@@ -50,11 +47,14 @@ public class OrdenacaoHeapsort extends Ordena {
 
 	/*<--------------------------------------------------------------------------------------->*/
 
-	private void buildMaxHeap(int posicaoFinal) {
+	private void buildMaxHeap() {
 		
-		this.tamanhoHeap = posicaoFinal -1;
-				for (int i = Math.floorDiv(this.tamanhoHeap, 2); i >= 0; i--)
-					maxHeapify(i);
+		this.tamanhoHeap = this.vetorOrdena.getTamanhoVetor() -1;
+		
+		for (int i = Math.floorDiv(this.tamanhoHeap, 2); i >= 0; i--){
+			
+			maxHeapify(i);			
+		}
 	}
 
 	/*<--------------------------------------------------------------------------------------->*/
@@ -65,18 +65,23 @@ public class OrdenacaoHeapsort extends Ordena {
 		int esquerda = 2 * indice + 1;
 		int direita = 2* indice + 2;
 
-		if ((esquerda < this.tamanhoHeap) && (vetorOrdena.getChaveOfItem(esquerda) > vetorOrdena.getChaveOfItem(indice))){
+		if ((esquerda <= this.tamanhoHeap) && (vetorOrdena.getChaveOfItem(esquerda) > vetorOrdena.getChaveOfItem(indice))){
 			maior = esquerda;
 		}
 		else maior = indice;
+		
+		this.comparacoes++;
 
-		if ((direita < this.tamanhoHeap) && (vetorOrdena.getChaveOfItem(direita) > vetorOrdena.getChaveOfItem(maior))){ 
+		if ((direita <= this.tamanhoHeap) && (vetorOrdena.getChaveOfItem(direita) > vetorOrdena.getChaveOfItem(maior))){ 
 			maior = direita;
 		}
+		
+		this.comparacoes++;
 
 		if (maior != indice) {
+			
 			trocaItems(indice, maior);
-			maxHeapify (maior);
+			maxHeapify(maior);
 		}
 	}
 

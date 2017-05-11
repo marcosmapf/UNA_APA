@@ -9,10 +9,12 @@ public class Lista06 {
 
 	public static void main(String[] args) {
 
+		System.out.println("***Ordenação Quicksort***\n");
 		double tempoInicial = System.currentTimeMillis();
-
-		OrdenacaoHeapsort heapsort = new OrdenacaoHeapsort(10);
-		heapsort.getVetor().preencherAleatorio(1000);
+		//int[] vetor = {96,1,59,35,81,58,16,55,84,61,87,83};
+		
+		OrdenacaoHeapsort heapsort = new OrdenacaoHeapsort(12);
+		heapsort.getVetor().preencherAleatorio(100);
 
 		System.out.print("\nVetor aleatorio: ");
 		heapsort.getVetor().printVetor();  
@@ -21,7 +23,7 @@ public class Lista06 {
 		System.out.print("Vetor ordenado: ");
 		heapsort.getVetor().printVetor(); 
 
-		//System.out.printf("\nNumero de comparacoes: %d\nNumero de trocas: %d", heapsort.getComparacoes(), heapsort.getTrocas());
-		//System.out.println("\nDuracao da ordenacao: " + (System.currentTimeMillis() - tempoInicial) + " ms.");
+		System.out.printf("\nNumero de comparacoes: %d\nNumero de trocas: %d", heapsort.getComparacoes(), heapsort.getTrocas());
+		System.out.println("\nDuracao da ordenacao: " + (System.currentTimeMillis() - tempoInicial) + " ms.");
 	}
 }
