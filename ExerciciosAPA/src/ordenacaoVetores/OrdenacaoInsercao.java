@@ -44,7 +44,7 @@ public class OrdenacaoInsercao extends Ordena {
 
 			auxiliar = this.vetorOrdena.getItem(i);
 
-			for (j = i - 1; (j >= 0) && (auxiliar.getChave() < this.vetorOrdena.getChaveOfItem(j)); j--, this.comparacoes++){			
+			for (j = i - 1; (j >= 0) && (auxiliar.getChave() < this.vetorOrdena.getChaveOfItem(j)); this.comparacoes++, j--){			
 
 				trocas++;
 				this.vetorOrdena.setItem(j+1, this.vetorOrdena.getItem(j));	

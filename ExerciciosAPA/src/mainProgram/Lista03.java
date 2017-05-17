@@ -39,7 +39,8 @@ public class Lista03 {
 	public static void escolherAtividade (int opcao){
 
 		double tempoInicial = System.currentTimeMillis();
-
+		int tamanho = requisitarTamanho();
+		
 		switch (opcao){
 		case 1:
 
@@ -47,7 +48,7 @@ public class Lista03 {
 			//int[] vetor = {10,9,8,7,6,5,4,3,2,1};
 			//OrdenacaoSelecao selecao = new OrdenacaoSelecao(vetor);
 
-			OrdenacaoSelecao selecao = new OrdenacaoSelecao(10);
+			OrdenacaoSelecao selecao = new OrdenacaoSelecao(tamanho);
 			selecao.getVetor().preencherAleatorio(1000);
 
 			System.out.print("\nVetor aleatorio: ");
@@ -67,7 +68,7 @@ public class Lista03 {
 			//int[] vetor = {10,9,8,7,6,5,4,3,2,1};
 			//OrdenacaoSelecao insercao = new OrdenacaoSelecao(vetor);
 
-			OrdenacaoInsercao insercao = new OrdenacaoInsercao(10);
+			OrdenacaoInsercao insercao = new OrdenacaoInsercao(tamanho);
 			insercao.getVetor().preencherAleatorio(1000);
 
 			System.out.print("\nVetor aleatorio: ");
@@ -112,5 +113,32 @@ public class Lista03 {
 		}
 
 		return exercicio;
+	}
+	
+	
+	/*<--------------------------------------------------------------------------------------->*/
+
+	
+	public static int requisitarTamanho(){
+
+		int tamanho = 0;
+
+		while (true){
+
+			try {
+
+				System.out.print("Informe o tamanho do vetor: ");
+				tamanho = entrada.nextInt();
+
+				if (tamanho < 5 || tamanho > 13000){
+					throw new OutOfBoundsException();
+				}
+
+				return tamanho;
+			} 
+			catch (OutOfBoundsException e){}
+			catch (InputMismatchException e){ System.out.println("Você inseriu um caractere invalido. Insira um exercício válido"); entrada.next();}
+			catch(Exception e){ e.printStackTrace();}
+		}
 	}
 }
