@@ -12,30 +12,32 @@ public class Lista06 {
 
 	public static void main(String[] args) {
 
-		System.out.println("***Ordenação Quicksort***\n");
-		
-		//int[] vetor = {96,1,59,35,81,58,16,55,84,61,87,83};
-		int tamanho = requisitarTamanho();
-		double tempoInicial = System.currentTimeMillis();
-		
-		OrdenacaoHeapsort heapsort = new OrdenacaoHeapsort(tamanho);
-		heapsort.getVetor().preencherAleatorio(100);
+		while(true){
+			System.out.println("***Ordenação Quicksort***\n");
 
-		System.out.print("\nVetor aleatorio: ");
-		heapsort.getVetor().printVetor();  
+			//int[] vetor = {96,1,59,35,81,58,16,55,84,61,87,83};
+			int tamanho = requisitarTamanho();
+			double tempoInicial = System.currentTimeMillis();
 
-		heapsort.ordenar(); 
-		System.out.print("Vetor ordenado: ");
-		heapsort.getVetor().printVetor(); 
+			OrdenacaoHeapsort heapsort = new OrdenacaoHeapsort(tamanho);
+			heapsort.getVetor().preencherAleatorio(100);
 
-		System.out.printf("\nNumero de comparacoes: %d\nNumero de trocas: %d", heapsort.getComparacoes(), heapsort.getTrocas());
-		System.out.println("\nDuracao da ordenacao: " + (System.currentTimeMillis() - tempoInicial) + " ms.");
+			System.out.print("\nVetor aleatorio: ");
+			heapsort.getVetor().printVetor();  
+
+			heapsort.ordenar(); 
+			System.out.print("Vetor ordenado: ");
+			heapsort.getVetor().printVetor(); 
+
+			System.out.printf("\nNumero de comparacoes: %d\nNumero de trocas: %d", heapsort.getComparacoes(), heapsort.getTrocas());
+			System.out.println("\nDuracao da ordenacao: " + (System.currentTimeMillis() - tempoInicial) + " ms.");
+		}
 	}
-	
-	
+
+
 	/*<--------------------------------------------------------------------------------------->*/
 
-	
+
 	public static int requisitarTamanho(){
 
 		int tamanho = 0;

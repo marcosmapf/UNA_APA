@@ -15,13 +15,15 @@ public class Lista05 {
 
 	public static void main(String[] args) {
 
-		System.out.println("Informe qual exercicio você deseja rodar:\n"
-				+ "1  -> Busca Sequencial\n"
-				+ "2  -> Busca Sequencial com sentinela\n"
-				+ "3  -> Busca Binaria\n");
+		while(true){
+			System.out.println("Informe qual exercicio você deseja rodar:\n"
+					+ "1  -> Busca Sequencial\n"
+					+ "2  -> Busca Sequencial com sentinela\n"
+					+ "3  -> Busca Binaria\n");
 
-		int opcao = leituraOpcao(1, 3);
-		escolherAtividade(opcao);	
+			int opcao = leituraOpcao(1, 3);
+			escolherAtividade(opcao);	
+		}
 	}
 
 

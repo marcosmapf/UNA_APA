@@ -24,14 +24,15 @@ public class Lista03 {
 
 	public static void main(String[] args) {
 
-		System.out.println("Informe qual exercicio você deseja rodar:\n"
-				+ "1  -> Ordenação de Algoritmos pelo método Selecao\n"
-				+ "2  -> Ordenação de Algoritmos pelo método Insercao\n");
+		while(true){
+			System.out.println("Informe qual exercicio você deseja rodar:\n"
+					+ "1  -> Ordenação de Algoritmos pelo método Selecao\n"
+					+ "2  -> Ordenação de Algoritmos pelo método Insercao\n");
 
-		int opcao = leituraOpcao(1, 2);
-		escolherAtividade(opcao);
+			int opcao = leituraOpcao(1, 2);
+			escolherAtividade(opcao);
+		}
 	}
-
 
 	/*<--------------------------------------------------------------------------------------->*/
 
@@ -40,7 +41,7 @@ public class Lista03 {
 
 		double tempoInicial = System.currentTimeMillis();
 		int tamanho = requisitarTamanho();
-		
+
 		switch (opcao){
 		case 1:
 
@@ -114,11 +115,11 @@ public class Lista03 {
 
 		return exercicio;
 	}
-	
-	
+
+
 	/*<--------------------------------------------------------------------------------------->*/
 
-	
+
 	public static int requisitarTamanho(){
 
 		int tamanho = 0;

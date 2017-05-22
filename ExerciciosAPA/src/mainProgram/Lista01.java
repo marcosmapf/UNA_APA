@@ -21,24 +21,25 @@ public class Lista01 {
 
 	public static void main(String[] args) {
 
+		while (true){
+			
+			System.out.println("Informe qual exercicio você deseja rodar:\n"
+					+ "1  -> Calculo de somatórios\n"
+					+ "2  -> Calculo de produtórios\n"
+					+ "3  -> Vetor de numeros aleatorios\n"
+					+ "4  -> Vetor numeros aleatorios alternados\n"
+					+ "5  -> Elementos pares e impares em vetor\n"
+					+ "6  -> Diagonal Principal e Secundária de matriz aleatória\n"
+					+ "7  -> Matriz transposta de uma matriz aleatória\n"
+					+ "8  -> Somar elementos abaixo da diagonal principal de uma matriz aleatória\n"
+					+ "9  -> Multiplicação de matrizes aleatórias\n"
+					+ "10 -> Venda de ingressos em sala de cinema\n"
+					+ "11 -> Distancia entre estradas de cidades vizinhas\n");
 
-		System.out.println("Informe qual exercicio você deseja rodar:\n"
-				+ "1  -> Calculo de somatórios\n"
-				+ "2  -> Calculo de produtórios\n"
-				+ "3  -> Vetor de numeros aleatorios\n"
-				+ "4  -> Vetor numeros aleatorios alternados\n"
-				+ "5  -> Elementos pares e impares em vetor\n"
-				+ "6  -> Diagonal Principal e Secundária de matriz aleatória\n"
-				+ "7  -> Matriz transposta de uma matriz aleatória\n"
-				+ "8  -> Somar elementos abaixo da diagonal principal de uma matriz aleatória\n"
-				+ "9  -> Multiplicação de matrizes aleatórias\n"
-				+ "10 -> Venda de ingressos em sala de cinema\n"
-				+ "11 -> Distancia entre estradas de cidades vizinhas\n");
-
-		int opcao = leituraOpcao(1, 11);
-		escolherAtividade(opcao);
+			int opcao = leituraOpcao(1, 11);
+			escolherAtividade(opcao);
+		}
 	}
-
 
 	/*<--------------------------------------------------------------------------------------->*/
 

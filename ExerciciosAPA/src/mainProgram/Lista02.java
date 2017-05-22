@@ -15,15 +15,17 @@ public class Lista02 {
 
 	public static void main(String[] args) {
 
+		while (true){
+			
+			System.out.println("Informe qual exercicio você deseja rodar:\n"
+					+ "1  -> Preenchendo 5 posicoes de um vetor de N espacos\n"
+					+ "2  -> Preenchendo N posicoes de vetor de N espacos\n"
+					+ "3  -> Preenchendo NxN posicoes de uma matriz de NxN espacos\n"
+					+ "4  -> Ordenação de Algoritmos pelo método Bolha\n");
 
-		System.out.println("Informe qual exercicio você deseja rodar:\n"
-				+ "1  -> Preenchendo 5 posicoes de um vetor de N espacos\n"
-				+ "2  -> Preenchendo N posicoes de vetor de N espacos\n"
-				+ "3  -> Preenchendo NxN posicoes de uma matriz de NxN espacos\n"
-				+ "4  -> Ordenação de Algoritmos pelo método Bolha\n");
-
-		int opcao = leituraOpcao(1, 4);
-		escolherAtividade(opcao);
+			int opcao = leituraOpcao(1, 4);
+			escolherAtividade(opcao);
+		}
 	}
 
 

@@ -65,14 +65,16 @@ public class OrdenacaoHeapsort extends Ordena {
 		int esquerda = 2 * indice + 1;
 		int direita = 2* indice + 2;
 
-		if ((esquerda <= this.tamanhoHeap) && (vetorOrdena.getChaveOfItem(esquerda) > vetorOrdena.getChaveOfItem(indice))){
+		if ((esquerda <= this.tamanhoHeap) && (this.vetorOrdena.getChaveOfItem(esquerda) > this.vetorOrdena.getChaveOfItem(indice))){
+			
 			maior = esquerda;
 		}
 		else maior = indice;
 		
 		this.comparacoes++;
 
-		if ((direita <= this.tamanhoHeap) && (vetorOrdena.getChaveOfItem(direita) > vetorOrdena.getChaveOfItem(maior))){ 
+		if ((direita <= this.tamanhoHeap) && (this.vetorOrdena.getChaveOfItem(direita) > this.vetorOrdena.getChaveOfItem(maior))){ 
+			
 			maior = direita;
 		}
 		
@@ -88,8 +90,8 @@ public class OrdenacaoHeapsort extends Ordena {
 	private void trocaItems (int primeiro, int segundo){
 
 		Item auxiliar = vetorOrdena.getItem(primeiro);
-		vetorOrdena.setItem(primeiro, vetorOrdena.getItem(segundo));
-		vetorOrdena.setItem(segundo, auxiliar);
+		this.vetorOrdena.setItem(primeiro, vetorOrdena.getItem(segundo));
+		this.vetorOrdena.setItem(segundo, auxiliar);
 		this.trocas++;
 	}
 }
