@@ -30,7 +30,7 @@ public class Lista06 {
 			heapsort.getVetor().printVetor(); 
 
 			System.out.printf("\nNumero de comparacoes: %d\nNumero de trocas: %d", heapsort.getComparacoes(), heapsort.getTrocas());
-			System.out.println("\nDuracao da ordenacao: " + (System.currentTimeMillis() - tempoInicial) + " ms.");
+			System.out.println("\nDuracao da ordenacao: " + (System.currentTimeMillis() - tempoInicial) + " ms.\n");
 		}
 	}
 

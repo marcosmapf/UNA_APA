@@ -65,6 +65,8 @@ public class Lista05 {
 			printResultado(binaria, codigo, posicaoB, tempoInicial);
 			break;
 		}	
+		
+		System.out.println("\n");
 	}
 
 

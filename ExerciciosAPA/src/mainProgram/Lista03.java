@@ -4,17 +4,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import custom.Exceptions.OutOfBoundsException;
-import lista01.Exercicio01.Somatorios;
-import lista01.Exercicio02.Produtorios;
-import lista01.Exercicio03.VetorParImpar;
-import lista01.Exercicio04.alternandoNumeros;
-import lista01.Exercicio05.QuantParImpar;
-import lista01.Exercicio06.MatrizDiags;
-import lista01.Exercicio07.MatrizTransposta;
-import lista01.Exercicio08.SomaAbaixoDiag;
-import lista01.Exercicio09.MultiplicacaoMatriz;
-import lista01.Exercicio10.Cinema;
-import lista01.Exercicio11.Cidades;
 import ordenacaoVetores.OrdenacaoInsercao;
 import ordenacaoVetores.OrdenacaoSelecao;
 
@@ -25,6 +14,7 @@ public class Lista03 {
 	public static void main(String[] args) {
 
 		while(true){
+			
 			System.out.println("Informe qual exercicio você deseja rodar:\n"
 					+ "1  -> Ordenação de Algoritmos pelo método Selecao\n"
 					+ "2  -> Ordenação de Algoritmos pelo método Insercao\n");
@@ -83,6 +73,8 @@ public class Lista03 {
 			System.out.println("\nDuracao da ordenacao: " + (System.currentTimeMillis() - tempoInicial) + " ms.");
 			break;
 		}
+		
+		System.out.println("\n");
 	}
 
 
