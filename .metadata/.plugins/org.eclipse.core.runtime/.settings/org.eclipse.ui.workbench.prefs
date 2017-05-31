@@ -1,0 +1,8 @@
+//org.eclipse.ui.commands/state/org.eclipse.ui.navigator.resources.nested.changeProjectPresentation/org.eclipse.ui.commands.radioState=false
+ColorsAndFontsPreferencePage.expandedCategories=Torg.eclipse.egit.ui.GitTheme
+ColorsAndFontsPreferencePage.selectedElement=Corg.eclipse.egit.ui.DiffRemoveForegroundColor
+PLUGINS_NOT_ACTIVATED_ON_STARTUP=org.eclipse.m2e.discovery;
+eclipse.preferences.version=1
+org.eclipse.egit.ui.DiffRemoveForegroundColor=255,255,128
+org.eclipse.egit.ui.IgnoredResourceForegroundColor=255,255,128
+org.eclipse.egit.ui.UncommittedChangeForegroundColor=255,255,128
