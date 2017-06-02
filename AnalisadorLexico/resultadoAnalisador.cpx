@@ -1,0 +1,36 @@
+Lexema: /*
+Token:  inicio_Comentario_Paragrafo
+
+Lexema:  Programa para identificar o maior dentre dois números. 
+Token:  cadeia_Caracteres
+
+Lexema: */
+Token:  fim_Comentario_Paragrafo
+
+Lexema: "
+Token:  atribuicao_Aspas
+
+Lexema: Informe o primeiro número: 
+Token:  cadeia_Caracteres
+
+Lexema: "
+Token:  atribuicao_Aspas
+
+Lexema: "
+Token:  atribuicao_Aspas
+
+Lexema: Informe o segundo número: 
+Token:  cadeia_Caracteres
+
+Lexema: "
+Token:  atribuicao_Aspas
+
+Lexema: "
+Token:  atribuicao_Aspas
+
+Lexema: Maior: 
+Token:  cadeia_Caracteres
+
+Lexema: "
+Token:  atribuicao_Aspas
+

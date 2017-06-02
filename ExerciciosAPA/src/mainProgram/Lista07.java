@@ -1,6 +1,6 @@
 package mainProgram;
 
-import cadastro.Cadastro;
+import lista07.Cadastro.Cadastro;
 
 public class Lista07 {
 

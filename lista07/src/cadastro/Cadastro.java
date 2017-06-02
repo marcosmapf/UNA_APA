@@ -11,14 +11,13 @@ import pessoa.Pessoa;
 
 public class Cadastro {
 
-	Hashtable<String, LinkedList> tabelaHash = new <String, LinkedList> Hashtable ();
+	Hashtable<String, LinkedList<Pessoa>> tabelaHash = new Hashtable <String, LinkedList<Pessoa>>();
 
 	/*<--------------------------------------------------------------------------------------->*/
 
 
 	public void cadastrar () {
 
-		int i;
 		LinkedList<Pessoa> pessoas = this.listar ();
 
 		System.out.println ("----------------------------");
@@ -27,7 +26,7 @@ public class Cadastro {
 
 		for (Pessoa p : pessoas) {
 
-			System.out.println ("Cadatrando: Pessoa: " + p.getNome () + " ProfissÃ£o: " + p.getProfissao ());
+			System.out.println ("Cadatrando: Pessoa: " + p.getNome () + " Profissão: " + p.getProfissao ());
 
 			if (this.tabelaHash.containsKey(p.getProfissao())) {
 
@@ -36,12 +35,12 @@ public class Cadastro {
 			} 
 			else {
 
-				LinkedList<Pessoa> l = new <Pessoa> LinkedList ();
+				LinkedList<Pessoa> l = new LinkedList<Pessoa>();
 				l.add (p);
 				this.tabelaHash.put (p.getProfissao (), l);
 			}
-		}
-		System.out.println ("");
+		}		
+		System.out.println();
 	}
 
 
@@ -49,26 +48,30 @@ public class Cadastro {
 
 
 	public void listarCadastro () {
+		
 		int i, cont = 0;
-		Enumeration profissoes = this.tabelaHash.keys ();
+		Enumeration<String> profissoes = this.tabelaHash.keys ();
 
 		System.out.println ("-----------------------------");
-		System.out.println ("--- ConteÃºdo do Cadastro: ---");
+		System.out.println ("--- Conteúdo do Cadastro: ---");
 		System.out.println ("-----------------------------");
+		
 		while (profissoes.hasMoreElements ()) {
+			
 			cont++;
-			String profissao = (String) profissoes.nextElement ();
-			LinkedList<Pessoa> l = this.tabelaHash.get (profissao);
+			String profissao = profissoes.nextElement();
+			LinkedList<Pessoa> l = this.tabelaHash.get(profissao);
 
 			System.out.print (cont + ") " + profissao + ": ");
-			for (i = 0; i < l.size (); i++) {
-				Pessoa p = l.get (i);
+			
+			for (i = 0; i < l.size(); i++) {
+				
+				Pessoa p = l.get(i);
 				System.out.print (p.getNome ());
-			}
-			System.out.println ();
+			}			
+			System.out.println();
 		}
 		System.out.println ();
-
 	}
 
 
