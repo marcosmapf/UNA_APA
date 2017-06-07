@@ -1,8 +1,0 @@
-A arvore mínima resultante, começando no vértice 3 é: 
-
-Vértice: 3 Pai: -1
-Vértice: 4 Pai: 3
-Vértice: 2 Pai: 3
-Vértice: 0 Pai: 2
-Vértice: 1 Pai: 0
-Vértice: 5 Pai: 4
