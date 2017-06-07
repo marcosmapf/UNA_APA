@@ -12,7 +12,7 @@ import custom.Objects.Pessoa;
 public class Cadastro {
 
 	Hashtable<String, LinkedList<Pessoa>> tabelaHash = new Hashtable <String, LinkedList<Pessoa>>();
-	int colisoes;	
+	private int colisoes;	
 
 	/*<--------------------------------------------------------------------------------------->*/
 
@@ -91,8 +91,8 @@ public class Cadastro {
 		LinkedList<String> listaNomes, listaProfissoes;
 		LinkedList<Pessoa> pessoas = new LinkedList<Pessoa>();
 
-		listaNomes = this.lerArquivo("listaNomes.txt");
-		listaProfissoes = this.lerArquivo("listaProfissoes.txt");
+		listaNomes = this.lerArquivo("listaNomes2.txt");
+		listaProfissoes = this.lerArquivo("listaProfissoes2.txt");
 
 		System.out.println ("-------------------------------------------");
 		System.out.println ("--- Lista de Pessoas e suas Profissões: ---");
@@ -212,7 +212,6 @@ public class Cadastro {
 
 			while(profissoes.hasMoreElements()){
 
-				String profissao = profissoes.nextElement();
 				pessoas = tabelaHash.get(profissoes.nextElement());
 
 				for (Pessoa p : pessoas) 
@@ -268,8 +267,10 @@ public class Cadastro {
 
 					comparacoes++;
 
-					if (p.getNome() == nome)
+					if (p.getNome().equalsIgnoreCase(nome)) {
 						procurando = false;
+						break;
+					}
 				}
 			}
 			

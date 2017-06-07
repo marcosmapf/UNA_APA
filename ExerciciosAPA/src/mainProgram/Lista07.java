@@ -9,5 +9,7 @@ public class Lista07 {
 	  Cadastro c = new Cadastro ();
 	  c.cadastrar ();
 	  c.listarCadastro ();
+	  c.imprimirColisoes();
+	  c.buscarPessoa("Evelina Edgell");  
   }  
 }
