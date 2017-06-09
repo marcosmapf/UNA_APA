@@ -273,13 +273,13 @@ public class Cadastro {
 					}
 				}
 			}
-			
+
 			if (procurando){
-				
+
 				System.out.println("\nA pessoa não está cadastrada!");
 			}
 			else System.out.println(nome + " está cadastrada na profissao: " + profissao);
-			
+
 			System.out.println("Numero de comparacoes: " + comparacoes);
 		}
 	}

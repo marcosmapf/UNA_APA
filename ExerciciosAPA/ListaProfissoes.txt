@@ -32,51 +32,51 @@ art critic and historian
 art glazier
 window-pane maker
 craft glazier
-art metalworker 
+art metalworker
 craft smith
 locksmith
 art photographer
 art restorer
-articled clerk 
+articled clerk
 legal assistant
 artificial flower maker
 artistic promotions manager
-assessor 
+assessor
 insurance assessor
-assistant housekeeper 
+assistant housekeeper
 domestic help
 assistant printing worker
 astrologer
 astronomer
-athlete 
+athlete
 sportsman/woman
 auctioneer
 audio graphic designer
 auditor
 auto-electrician
-auxiliary shop assistant 
+auxiliary shop assistant
 shop worker
 shelf filler
-auxiliary worker in geological survey 
+auxiliary worker in geological survey
 geological survey worker
-auxiliary worker in textile and clothing industry 
+auxiliary worker in textile and clothing industry
 worker in textile and clothing
-auxiliary worker in the timber industry 
+auxiliary worker in the timber industry
 worker in woodcutting
-auxiliary worker in water management 
+auxiliary worker in water management
 worker in water supply and distribution
 auxiliaryworker in pharmaceutical and medical production
 baker
-bank clerk 
+bank clerk
 client service
 bank clerk for commercial credit
 banking expert
-barber and hairdresser 
+barber and hairdresser
 hairdresser
-barman/barmaid 
+barman/barmaid
 bartender
 basket-maker and weaver
-beautician 
+beautician
 beauty therapist
 beekeeper
 bibliographer
@@ -84,7 +84,7 @@ biochemist
 biologist
 biotechnologist
 biscuit maker
-blacksmith 
+blacksmith
 farrier
 blasters foreman/woman (explosives expert)
 blast-furnaceman/woman
