@@ -61,8 +61,11 @@ public class TrieSR<Value> {
 	public void buscarChave(String chave) {
 
 		Node x = buscarChave(raiz, chave, 0);
-		if (x == null) System.out.println("O aluno ainda não foi cadastrado");
-		else System.out.println("O RA do aluno(a) " + chave + " e: " + x.valor);
+		if (x == null) System.out.println("O aluno(a) ainda não foi cadastrado(a)");
+		else if (x.valor != null)
+			System.out.println("O RA do aluno(a) " + chave + " e: " + x.valor);
+		else 
+			System.out.println("O aluno(a) ainda não foi cadastro(a)");
 	}
 
 	private Node buscarChave(Node x, String chave, int d) {
