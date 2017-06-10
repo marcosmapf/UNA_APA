@@ -106,8 +106,10 @@ public class Lista01 {
 
 		case 10: Cinema salaCinema = new Cinema(10); salaCinema.novaCompra(); salaCinema.getSecao().printMatriz(); salaCinema.totalTicket(); break;
 
-		case 11: Cidades estradaCidades = new Cidades(4); estradaCidades.printMatriz(); estradaCidades.checarDistancia(3, 4); break;
+		case 11: Cidades estradaCidades = new Cidades(4); estradaCidades.printMatriz(); estradaCidades.checarDistancia(); break;
 		}
+		
+		System.out.println("\n");
 	}
 
 

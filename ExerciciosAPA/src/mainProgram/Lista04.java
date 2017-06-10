@@ -31,7 +31,7 @@ public class Lista04 {
 			quickSort.getVetor().printVetor(); 
 
 			System.out.printf("\nNumero de comparacoes: %d\nNumero de trocas: %d", quickSort.getComparacoes(), quickSort.getTrocas());
-			System.out.println("\nDuracao da ordenacao: " + (System.currentTimeMillis() - tempoInicial) + " ms.");
+			System.out.println("\nDuracao da ordenacao: " + (System.currentTimeMillis() - tempoInicial) + " ms.\n");
 		}
 	}
 

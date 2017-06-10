@@ -65,6 +65,8 @@ public class Lista02 {
 			System.out.println("\nDuracao da ordenacao: " + (System.currentTimeMillis() - tempoInicial) + " ms.");
 			break;
 		}
+		
+		System.out.println("\n");
 	}
 
 

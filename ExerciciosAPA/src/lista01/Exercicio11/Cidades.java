@@ -123,13 +123,55 @@ public class Cidades {
 	/*<--------------------------------------------------------------------------------------->*/
 
 
-	public void checarDistancia(int cidade1, int cidade2){
+	public void checarDistancia(){
 
-		if (matrizEstradas[cidade1 - 1][cidade2 - 1] > 0){
+		System.out.println("\n*** Checando a distância entre duas cidades ***\n");
+		
+		boolean diferente = false;
+		int cidade1 = 0;
+		int cidade2 = 0;
+		
+		while (diferente == false){
+			
+			cidade1 = perguntarCidade();
+			cidade2 = perguntarCidade();
+			
+			if (cidade1 != cidade2) diferente = true;
+			else System.out.println("Você inseriu a mesma cidade duas vezes, tente novamente.\n");
+		}
+
+		if (matrizEstradas[cidade1 -1][cidade2 -1] > 0){
 
 			System.out.printf("\nA distancia entre as cidades %d e %d e %.2fkm.", cidade1, cidade2, matrizEstradas[cidade1 - 1][cidade2 - 1]);
 		}		
 		else System.out.print("\nNão existe estrada entre as cidades");
+	}
+
+
+	/*<--------------------------------------------------------------------------------------->*/
+
+
+	private int perguntarCidade(){
+
+		int cidade = 0;
+
+		while (true){
+
+			try{
+
+				System.out.print("Insira a cidade: ");
+				cidade = entrada.nextInt();
+
+				if (cidade < 0 || cidade > this.matrizEstradas.length){
+					throw new OutOfBoundsException();
+				}
+
+				return cidade;
+			}
+			catch(OutOfBoundsException e){}
+			catch(InputMismatchException e){ System.out.println("Voce inseriu um caractere incorreto."); entrada.next();}
+			catch(Exception e){ e.printStackTrace();}
+		}
 	}
 
 

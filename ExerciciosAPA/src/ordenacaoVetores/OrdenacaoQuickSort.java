@@ -3,7 +3,7 @@ package ordenacaoVetores;
 import custom.Objects.Item;
 import custom.Objects.VetorItems;
 
-public class OrdenacaoQuickSort extends Ordena {
+public class OrdenacaoQuicksort extends Ordena {
 
 	/*Escreva um pacote em linguagem Java para ordenação de vetores. O pacote deve conter o
 	 * algoritmo de ordenação pelo método QuickSort. Teste o algoritmo de ordenação implementado no
@@ -16,13 +16,13 @@ public class OrdenacaoQuickSort extends Ordena {
 	/*<--------------------------------------------------------------------------------------->*/
 
 
-	public OrdenacaoQuickSort(int tamanho){
+	public OrdenacaoQuicksort(int tamanho){
 
 		this.vetorOrdena = new VetorItems(tamanho);
 	}
 
 
-	public OrdenacaoQuickSort(int[] vetor){
+	public OrdenacaoQuicksort(int[] vetor){
 
 		this.vetorOrdena = new VetorItems(vetor);
 	}
