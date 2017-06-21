@@ -13,7 +13,7 @@ public class Lista06 {
 	public static void main(String[] args) {
 
 		while(true){
-			System.out.println("***Ordenação Quicksort***\n");
+			System.out.println("***Ordenação Heapsort***\n");
 
 			//int[] vetor = {96,1,59,35,81,58,16,55,84,61,87,83};
 			int tamanho = requisitarTamanho();
